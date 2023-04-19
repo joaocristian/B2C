@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f2a0bcd-dfc1-4ee2-9c27-d54580b0deb8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automacao-testes-commerce-b2c_cx.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chromedriver_win32.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geckodriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Core/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Core/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Core/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Core/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/CarrinhoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/CarrinhoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/EnderecoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/EnderecoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/EntregaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/EntregaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/ItemPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/ItemPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/MinhaConta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/MinhaConta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/PagamentoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/PagamentoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/VitrinePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/VitrinePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/VitrineServicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/VitrineServicos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SuiteTestes/Testes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SuiteTestes/Testes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/A_PrecoAVistaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/A_PrecoAVistaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/B_CadastroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/B_CadastroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/C_MinhaConta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/C_MinhaConta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/D_Consultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/D_Consultas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/D_TireSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/D_TireSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/D_TireSelector_Preprod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/D_TireSelector_Preprod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/E_BuscaPorMedidaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/E_BuscaPorMedidaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/F_FluxoVendaServicoAvulso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/F_FluxoVendaServicoAvulso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/G_CarrinhoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/G_CarrinhoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/H_CompraGuestEntregaNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/H_CompraGuestEntregaNormal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/I_CompraGuestEntregaMM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/I_CompraGuestEntregaMM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/J_CompraGuestEntregaRetira.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/J_CompraGuestEntregaRetira.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/K_CompraPFEntregaNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/K_CompraPFEntregaNormal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/L_CompraPFEntregaMM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/L_CompraPFEntregaMM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/M_CompraPFEntregaRetira.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/M_CompraPFEntregaRetira.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/N_ConferirFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/N_ConferirFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/O_FluxoCompraServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/O_FluxoCompraServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Testes/Z_FluxoCompraTestPJ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testes/Z_FluxoCompraTestPJ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Core/BasePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Core/BasePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Core/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Core/BaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Core/DriverFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Core/DriverFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Core/DriverFactory$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Core/DriverFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Core/DriverFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/CarrinhoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/CarrinhoPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/EnderecoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/EnderecoPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/EntregaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/EntregaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/ItemPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/ItemPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/MinhaConta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/MinhaConta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/PagamentoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/PagamentoPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/VitrinePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/VitrinePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pages/VitrineServicos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pages/VitrineServicos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SuiteTestes/Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SuiteTestes/hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SuiteTestes/producao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/A_PrecoAVistaTest_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/A_PrecoAVistaTest_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/A_PrecoAVistaTest_producao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/B_CadastroTest_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/B_CadastroTest_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/B_CadastroTest_producao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/C_MinhaConta_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/C_MinhaConta_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/C_MinhaConta_producao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/D_Consultas_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/D_Consultas_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/D_TireSelector_Preprod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Testes/D_TireSelector_Preprod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/D_TireSelector_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/E_BuscaPorMedidaTest_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/E_BuscaPorMedidaTest_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/F_FluxoVendaServicoAvulso_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/F_FluxoVendaServicoAvulso_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/G_CarrinhoTest_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/G_CarrinhoTest_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/H_CompraGuestEntregaNormal_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/H_CompraGuestEntregaNormal_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/I_CompraGuestEntregaMM_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/I_CompraGuestEntregaMM_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/J_CompraGuestEntregaRetira_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/J_CompraGuestEntregaRetira_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/K_CompraPFEntregaNormal_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/K_CompraPFEntregaNormal_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/L_CompraPFEntregaMM_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/L_CompraPFEntregaMM_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/M_CompraPFEntregaRetira_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/M_CompraPFEntregaRetira_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/N_ConferirFiles_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/N_ConferirFiles_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/O_FluxoCompraServico_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/O_FluxoCompraServico_hml4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/Z_FluxoCompraTestPJ_Preprod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testes/Z_FluxoCompraTestPJ_hml4.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2BLvAG2UIP2AetLevb7eXym53kO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/joao.carvalho/automacao-testes-commerce-b2c-joao&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Testes" />
+      <recent name="SuiteTestes" />
+      <recent name="Pages" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.F_FluxoVendaServicoAvulso.comprarServicoDeTruckPesadoExtraPesadoCombo1e2PF">
+    <configuration name="F_FluxoVendaServicoAvulso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cloud_Automacao_Selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testes" />
+      <option name="MAIN_CLASS_NAME" value="Testes.F_FluxoVendaServicoAvulso" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="F_FluxoVendaServicoAvulso.comprarServicoDeCarroPasseioAro12_16Qtdd1ComboCom1e2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cloud_Automacao_Selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testes" />
+      <option name="MAIN_CLASS_NAME" value="Testes.F_FluxoVendaServicoAvulso" />
+      <option name="METHOD_NAME" value="comprarServicoDeCarroPasseioAro12_16Qtdd1ComboCom1e2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="F_FluxoVendaServicoAvulso.comprarServicoDeMotoCustomDianteiroETraseiro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cloud_Automacao_Selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testes" />
+      <option name="MAIN_CLASS_NAME" value="Testes.F_FluxoVendaServicoAvulso" />
+      <option name="METHOD_NAME" value="comprarServicoDeMotoCustomDianteiroETraseiro" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="F_FluxoVendaServicoAvulso.comprarServicoDeTruckPesadoExtraPesadoCombo1e2PF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cloud_Automacao_Selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testes" />
+      <option name="MAIN_CLASS_NAME" value="Testes.F_FluxoVendaServicoAvulso" />
+      <option name="METHOD_NAME" value="comprarServicoDeTruckPesadoExtraPesadoCombo1e2PF" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cloud_Automacao_Selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SuiteTestes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="SuiteTestes" />
+      <option name="MAIN_CLASS_NAME" value="SuiteTestes.Testes" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.F_FluxoVendaServicoAvulso.comprarServicoDeTruckPesadoExtraPesadoCombo1e2PF" />
+        <item itemvalue="JUnit.Testes" />
+        <item itemvalue="JUnit.F_FluxoVendaServicoAvulso.comprarServicoDeCarroPasseioAro12_16Qtdd1ComboCom1e2" />
+        <item itemvalue="JUnit.F_FluxoVendaServicoAvulso" />
+        <item itemvalue="JUnit.F_FluxoVendaServicoAvulso.comprarServicoDeMotoCustomDianteiroETraseiro" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f2a0bcd-dfc1-4ee2-9c27-d54580b0deb8" name="Changes" comment="" />
+      <created>1656698038007</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656698038007</updated>
+      <workItem from="1677069230642" duration="23742000" />
+      <workItem from="1677246512193" duration="4540000" />
+      <workItem from="1677499513680" duration="10119000" />
+      <workItem from="1677587746735" duration="7779000" />
+      <workItem from="1677852985809" duration="7052000" />
+      <workItem from="1678105855921" duration="44139000" />
+      <workItem from="1678450396191" duration="2212000" />
+      <workItem from="1678707317190" duration="819000" />
+      <workItem from="1678725660192" duration="4808000" />
+      <workItem from="1678800223375" duration="17539000" />
+      <workItem from="1678883154880" duration="20127000" />
+      <workItem from="1678971089209" duration="17402000" />
+      <workItem from="1679053379187" duration="13908000" />
+      <workItem from="1679312944896" duration="8592000" />
+      <workItem from="1679399713351" duration="52407000" />
+      <workItem from="1679574039820" duration="10733000" />
+      <workItem from="1679593572979" duration="16632000" />
+      <workItem from="1679660059246" duration="4795000" />
+      <workItem from="1679670056176" duration="23441000" />
+      <workItem from="1679935097857" duration="140000" />
+      <workItem from="1679935454486" duration="495000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Core/BasePage.java</url>
+          <line>367</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Core/BasePage.java</url>
+          <line>360</line>
+          <option name="timeStamp" value="548" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/VitrineServicos.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="613" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>403</line>
+          <option name="timeStamp" value="670" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>599</line>
+          <option name="timeStamp" value="722" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>776</line>
+          <option name="timeStamp" value="734" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>899</line>
+          <option name="timeStamp" value="741" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>884</line>
+          <option name="timeStamp" value="742" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/D_TireSelector_Preprod.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="761" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/D_TireSelector_Preprod.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="838" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="857" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/LoginPage.java</url>
+          <line>238</line>
+          <option name="timeStamp" value="1005" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/J_CompraGuestEntregaRetira.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="1015" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/LoginPage.java</url>
+          <line>220</line>
+          <option name="timeStamp" value="1025" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="1093" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/ItemPage.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="1102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>1057</line>
+          <option name="timeStamp" value="1149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/B_CadastroTest.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="1234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/HomePage.java</url>
+          <line>362</line>
+          <option name="timeStamp" value="1286" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/F_FluxoVendaServicoAvulso.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="1294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/F_FluxoVendaServicoAvulso.java</url>
+          <line>1343</line>
+          <option name="timeStamp" value="1298" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/F_FluxoVendaServicoAvulso.java</url>
+          <line>1283</line>
+          <option name="timeStamp" value="1300" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/K_CompraPFEntregaNormal.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="1362" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/H_CompraGuestEntregaNormal.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="1363" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/A_PrecoAVistaTest.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1410" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Testes/F_FluxoVendaServicoAvulso.java</url>
+          <line>675</line>
+          <option name="timeStamp" value="1413" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/automacao_testes_commerce_b2c_joao$F_FluxoVendaServicoAvulso_hml4.ic" NAME="F_FluxoVendaServicoAvulso_hml4 Coverage Results" MODIFIED="1680040357761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Testes.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/automacao_testes_commerce_b2c_joao$FluxoVendaServicoAvulso_comprarServicoParaConferirNomeDaOficina.ic" NAME="FluxoVendaServicoAvulso.comprarServicoParaConferirNomeDaOficina Coverage Results" MODIFIED="1674141070253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Testes.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/automacao_testes_commerce_b2c_joao$FluxoCompraTest_GuestNormalExpressoBoletoJogoAP10010558MaisPneu10130054CX.ic" NAME="FluxoCompraTest.GuestNormalExpressoBoletoJogoAP10010558MaisPneu10130054CX Coverage Results" MODIFIED="1675292046364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Testes.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/automacao_testes_commerce_b2c$SuiteTestes.ic" NAME="SuiteTestes Coverage Results" MODIFIED="1656700501169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SuiteTestes.*</FILTER>
+    </SUITE>
+  </component>
+</project>
