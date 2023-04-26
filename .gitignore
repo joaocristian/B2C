@@ -1,1 +1,4 @@
 target/screenshot/*
+/target/
+/.idea/
+/out/

@@ -12,29 +12,30 @@ public class Z_FluxoCompraTestPJ extends BaseTest {
     EnderecoPage enderecoPage = new EnderecoPage();
     EntregaPage entregaPage = new EntregaPage();
     PagamentoPage pagamentoPage = new PagamentoPage();
+    ItemPage itemPage = new ItemPage();
 
     @Test
-    public void PJNormalPixJogoAP10010421MaisPneu10130054CX() throws InterruptedException {
-        homePage.barraDePesquisa("AP100");
-        homePage.barraDePesquisa("10421");
+    public void PJNormalPixJogoIT16001186MaisPneu10120084CX() throws InterruptedException {
+        homePage.barraDePesquisa("IT16001186");
         homePage.apertarEnter();
-        homePage.clickLupa();
-        vitrinePage.ClickComprar();
+        vitrinePage.clicarNoProduto();
+        itemPage.clickBtnComprar();
         carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1013");
-        homePage.barraDePesquisa("0054");
+        homePage.barraDePesquisa("10120084");
         homePage.apertarEnter();
-        homePage.clickLupa();
-        vitrinePage.ClickComprar();
+        vitrinePage.clicarNoProduto();
+        itemPage.clickBtnComprar();
+        carrinhoPage.escreverCep("04547006");
+        carrinhoPage.clickCalcularCEP();
+        entregaPage.normalNoCarrinho();
         carrinhoPage.clickFinalizarCompra();
         loginPage.emailUsuarioAntigoPJ();
         loginPage.senhaUsuarioAntigoPJ();
         loginPage.btnEntrar();
-        enderecoPage.selecionaroEndereco04547006CX1();
+        enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        entregaPage.ProximoEntregaComEspera();
+        pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -48,7 +49,7 @@ public class Z_FluxoCompraTestPJ extends BaseTest {
         vitrinePage.ClickComprar();
         carrinhoPage.continuarComprando();
         homePage.barraDePesquisa("1013");
-        homePage.barraDePesquisa("0054");
+            homePage.barraDePesquisa("0054");
         homePage.apertarEnter();
         homePage.clickLupa();
         vitrinePage.ClickComprar();

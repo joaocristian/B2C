@@ -40,7 +40,7 @@ public class VitrineServicos extends BasePage {
         apertarEnterTecladoPath("//*[@id=\"container-select-options\"]/div[2]/div/div[2]/div/div[2]/button");
     }
 
-    public void calcularCepComEnter() {
+    public void calcularCepComEnter() throws InterruptedException {
         apertarEnterTeclado("cep");
     }
 

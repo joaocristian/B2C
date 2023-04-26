@@ -53,7 +53,8 @@ public class DriverFactory {
         //driver.get("https://www.pneustore.com.br/");
         //driver.get("https://cxpneustore.eastus.cloudapp.azure.com:1443/");
         //driver.get("https://ps.cmaww4dkcp-cantucome1-s1-public.model-t.cc.commerce.ondemand.com/");
-        driver.get("https://www-qas.pneustore.com.br/");
+        //driver.get("https://www-qas.pneustore.com.br/");
+        driver.get("https://www-prd.pneustore.com.br/");
         //url = "https://cxpneustore.eastus.cloudapp.azure.com:1443/";
         //url = "https://hml4commerce.eastus.cloudapp.azure.com:1443/";
         //driver.get("https://preprod.pneustore.com.br/");
@@ -64,7 +65,8 @@ public class DriverFactory {
         //url = ("https://hml4commerce.eastus.cloudapp.azure.com:1443/");
         //url = ("https://cxpneustore.eastus.cloudapp.azure.com:1443/");
         //url = ("https://ps.cmaww4dkcp-cantucome1-s1-public.model-t.cc.commerce.ondemand.com/");
-        url = ("https://www-qas.pneustore.com.br/");
+        //url = ("https://www-qas.pneustore.com.br/");
+        url = ("https://www-prd.pneustore.com.br/");
 
         driver.manage().window().maximize();
         return driver;

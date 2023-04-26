@@ -13,6 +13,8 @@ import static Core.DriverFactory.getDriver;
 
 public class EnderecoPage extends BasePage {
 
+    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+
     public void escolherEndereco(){
         clicarComNome("loading","address");
     }
@@ -61,7 +63,6 @@ public class EnderecoPage extends BasePage {
     }
 
     public void btnProximoEndereco() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(By.id("nextButtonSubmit")));
         cliqueBotao("nextButtonSubmit");
     }
@@ -175,7 +176,7 @@ public class EnderecoPage extends BasePage {
         escreverNumeroDaCasa();
         escreverComplemento();
         escreverReferencia();
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
     }
 
     public void escreverDadosDoEndereco04547004() throws InterruptedException {
@@ -276,7 +277,7 @@ public class EnderecoPage extends BasePage {
         }
     }
 
-    public void escreverEndereçoGuestVindoDoCarrinho(){
+    public void escreverEnderecoGuestVindoDoCarrinho(){
         escreverCasa();
         escreverNumeroDaCasa();
         escreverComplemento();

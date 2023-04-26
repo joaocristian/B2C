@@ -35,9 +35,14 @@ public class CarrinhoPage extends BasePage {
     }
 
     public void clickFinalizarCompra(){
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-continue-checkout")));
-        clicarComEsperaID("btn-continue-checkout");
+        try{
+            clicarComEsperaID("btn-continue-checkout");
+        }
+        catch (Exception ex){
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-continue-checkout")));
+            cliqueBotao("btn-continue-checkout");
+        }
+
     }
 
     public void clickFinalizarCompra1(){
@@ -73,8 +78,14 @@ public class CarrinhoPage extends BasePage {
     }
 
     public void continuarComprando() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("btn-continue-shopping")));
-        cliqueBotao("btn-continue-shopping");
+        try{
+            wait.until(ExpectedConditions.elementToBeClickable(By.id("btn-continue-shopping")));
+            cliqueBotao("btn-continue-shopping");
+        }
+        catch (Exception ex){
+            cliqueBotao("btn-continue-shopping");
+        }
+
     }
 
     public void continuarComprandobkp() {

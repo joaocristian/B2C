@@ -1,9 +1,12 @@
 package Testes;
 
+import Core.BasePage;
 import Core.BaseTest;
 import Pages.*;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
 
 public class H_CompraGuestEntregaNormal extends BaseTest {
     HomePage homePage = new HomePage();
@@ -14,100 +17,117 @@ public class H_CompraGuestEntregaNormal extends BaseTest {
     EntregaPage entregaPage = new EntregaPage();
     PagamentoPage pagamentoPage = new PagamentoPage();
     ItemPage itemPage = new ItemPage();
+    BasePage basePage = new BasePage();
+
+    String pneu = "10120084";
+    String jogo = "IT16001186";
+    String cep = "04547004";
+
 
     //COM 1 PNEU
     @Test
+    @Order(1)
     @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Boleto")
-    public void GuestNormalBoletoPneu10070194() throws InterruptedException {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestNormalBoletoPneu() throws InterruptedException {
+        homePage.barraDePesquisa(pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
+        //Thread.sleep(1000);
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(cep);
         enderecoPage.btnProximoEndereco();
+        //Thread.sleep(1000);
         entregaPage.entregaNormal();
+        //Thread.sleep(6000);
         entregaPage.btnProximoEntrega();
+        //Thread.sleep(6000);
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
     @Test
+    @Order(2)
     @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Pix")
-    public void GuestNormalPixPneu10070194() throws InterruptedException {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestNormalPixPneu() throws InterruptedException {
+        homePage.barraDePesquisa(pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(cep);
         enderecoPage.btnProximoEndereco();
+        Thread.sleep(1000);
         entregaPage.entregaNormal();
+        Thread.sleep(5000);
         entregaPage.btnProximoEntrega();
+        Thread.sleep(5000);
         pagamentoPage.PagPix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
     @Test
+    @Order(3)
     @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Cartão de Crédito")
-    public void GuestNormalCCPneu10070194() throws InterruptedException {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestNormalCCPneu() throws InterruptedException {
+        homePage.barraDePesquisa(pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
-        carrinhoPage.clickCalcularCEP();
-        carrinhoPage.clickFinalizarCompraComEsperaOficial();
+        carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaNormalCX();
+        Thread.sleep(1000);
+        entregaPage.entregaNormal();
+        Thread.sleep(5000);
         entregaPage.btnProximoEntrega();
+        Thread.sleep(5000);
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
     @Test
+    @Order(4)
     @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Nupay")
-    public void GuestExpressoNupayPneu10070194() throws InterruptedException {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestExpressoNupayPneu() throws InterruptedException {
+        homePage.barraDePesquisa(pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(cep);
         enderecoPage.btnProximoEndereco();
+        Thread.sleep(1000);
         entregaPage.entregaNormal();
+        Thread.sleep(5000);
         entregaPage.btnProximoEntrega();
-        pagamentoPage.PagNupay();
+        Thread.sleep(5000);
+        pagamentoPage.pagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
-        System.out.println(pagamentoPage.ObterNumeroPedido1());
+        System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
 
 
     //COM 1 JOGO
     @Test
+    @Order(5)
     @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Pix")
-    public void GuestNormalPixJogoIT16001186() throws InterruptedException {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestNormalPixJogo() throws InterruptedException {
+        homePage.barraDePesquisa(jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(cep);
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
         entregaPage.btnProximoEntrega();
@@ -115,34 +135,38 @@ public class H_CompraGuestEntregaNormal extends BaseTest {
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
+
     @Test
+    @Order(6)
     @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Boleto")
-    public void GuestNormalBoletoJogoIT16001186() throws InterruptedException {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestNormalBoletoJogo() throws InterruptedException {
+        homePage.barraDePesquisa(jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(cep);
         enderecoPage.btnProximoEndereco();
+        Thread.sleep(1000);
         entregaPage.entregaNormal();
+        Thread.sleep(5000);
         entregaPage.btnProximoEntrega();
+        Thread.sleep(5000);
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
     @Test
+    @Order(7)
     @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Cartão de crédito")
-    public void GuestNormalCCJogoIT16001186() throws InterruptedException {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestNormalCCJogo() throws InterruptedException {
+        homePage.barraDePesquisa(jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
+        carrinhoPage.escreverCep(cep);
         carrinhoPage.clickCalcularCEP();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
@@ -156,21 +180,24 @@ public class H_CompraGuestEntregaNormal extends BaseTest {
     }
 
     @Test
+    @Order(8)
     @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Nupay")
-    public void GuestNormalNupayJogoIT16001186() throws InterruptedException {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestNormalNupayJogo() throws InterruptedException {
+        homePage.barraDePesquisa(jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
+        carrinhoPage.escreverCep(cep);
         carrinhoPage.clickCalcularCEP();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
+        Thread.sleep(1000);
         entregaPage.entregaNormal();
+        Thread.sleep(5000);
         entregaPage.btnProximoEntrega();
+        Thread.sleep(5000);
         pagamentoPage.PagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -178,20 +205,19 @@ public class H_CompraGuestEntregaNormal extends BaseTest {
 
     //COM 1 PNEU E 1 JOGO
     @Test
+    @Order(9)
     @DisplayName("Compra Rápida, com um Pneu + Jogo de pneus, entrega normal, pagamento no Pix")
-    public void GuestNormalPixJogoIT16001186MaisPneu10070194SPLIT() throws InterruptedException {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
-        homePage.apertarEnter();
-        vitrinePage.clicarNoProduto();
-        itemPage.clickBtnComprar1();
-        carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestNormalPixJogoMaisPneu() throws InterruptedException {
+        homePage.barraDePesquisa(jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
+        carrinhoPage.continuarComprando();
+        homePage.barraDePesquisa(pneu);
+        homePage.apertarEnter();
+        vitrinePage.clicarNoProduto();
+        itemPage.clickBtnComprar();
+        carrinhoPage.escreverCep(cep);
         carrinhoPage.clickCalcularCEP();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
@@ -205,27 +231,29 @@ public class H_CompraGuestEntregaNormal extends BaseTest {
     }
 
     @Test
+    @Order(10)
     @DisplayName("Compra Rápida, com um Pneu + Jogo de pneus, entrega normal, pagamento no Boleto")
-    public void GuestNormalBoletoJogoIT16001186MaisPneu10070194SPLIT() throws InterruptedException {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
-        homePage.apertarEnter();
-        vitrinePage.clicarNoProduto();
-        itemPage.clickBtnComprar1();
-        carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestNormalBoletoJogoMaisPneu() throws InterruptedException {
+        homePage.barraDePesquisa(jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
+        carrinhoPage.continuarComprando();
+        homePage.barraDePesquisa(pneu);
+        homePage.apertarEnter();
+        vitrinePage.clicarNoProduto();
+        itemPage.clickBtnComprar();
+        carrinhoPage.escreverCep(cep);
         carrinhoPage.clickCalcularCEP();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaNormal();
+        Thread.sleep(1000);
+        entregaPage.entregaNormalCX();
+        Thread.sleep(5000);
         entregaPage.btnProximoEntrega();
+        Thread.sleep(5000);
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -283,5 +311,4 @@ public class H_CompraGuestEntregaNormal extends BaseTest {
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
-
 }

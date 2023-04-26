@@ -117,7 +117,6 @@ public class LoginPage  extends BasePage {
     }
 
     public void NomeGuest(String nome){
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(By.id("guest.name")));
         escreverTexto("guest.name",nome);
     }
@@ -249,7 +248,7 @@ public class LoginPage  extends BasePage {
     }
 
     public void guest() throws InterruptedException {
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
         cliqueBotaoXpath("//*[@id=\"registerType\"]/div/div/div[1]/label");
         NomeGuest("Guest");
         escreverTexto("guest.cpf",geradorDeCPF.geraCPFFinal());
@@ -257,7 +256,7 @@ public class LoginPage  extends BasePage {
         escreverTexto("guest.email",geradorDeCPF.geraCPFFinal()+"@cantuteste.com");
         cliqueBotaoXpath("//*[@id=\"guestForm\"]/div[5]/div/div/label");
         cliqueBotaoXpath("//*[@id=\"guestForm\"]/div[6]/div/div/label");
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
         cliqueBotao("registerGuestBtn");
     }
 

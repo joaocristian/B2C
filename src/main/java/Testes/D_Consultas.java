@@ -134,12 +134,16 @@ public class D_Consultas extends BaseTest {
     public void marcasPrincipaisMarcas() throws InterruptedException {
         homePage.marcasPrincipaisMarcasAosen();
         homePage.marcasPrincipaisMarcasBFGoodrich();
+        Thread.sleep(1000);
         homePage.marcasPrincipaisMarcasBridgestone();
         homePage.marcasPrincipaisMarcasContinental();
+        Thread.sleep(1000);
         homePage.marcasPrincipaisMarcasCooper();
         homePage.marcasPrincipaisMarcasDRC();
         homePage.marcasPrincipaisMarcasFarroad();
+        Thread.sleep(1000);
         homePage.marcasPrincipaisMarcasFirestone();
+        Thread.sleep(1000);
         homePage.marcasPrincipaisMarcasGeneralTire();
         homePage.marcasPrincipaisMarcasGoodyear();
         homePage.marcasPrincipaisMarcasHankook();

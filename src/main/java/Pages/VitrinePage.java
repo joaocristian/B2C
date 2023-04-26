@@ -105,9 +105,15 @@ public class VitrinePage extends BasePage {
      * @param s************/
 
     public void clickItemXpath(String s){
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(s)));
-        clicarLinkXpath(s);
+        try{
+            clicarLinkXpath(s);
+        }
+        catch (Exception ex){
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(s)));
+            clicarLinkXpath(s);
+        }
+
+
     }
 
     public void clickItemCss(){
@@ -166,7 +172,7 @@ public class VitrinePage extends BasePage {
     }
 
     public void clicarNoProduto() {
-        clickItemXpath("/html/body/main/div[4]/div[1]/div/div/div/div[2]/ul/div/div[1]/div[2]/a");
+        cliqueBotaoXpath("/html/body/main/div[4]/div[1]/div/div/div/div[2]/ul/div/div[1]/div[2]/a");
     }
 
     public void clicarNoProduto2() {

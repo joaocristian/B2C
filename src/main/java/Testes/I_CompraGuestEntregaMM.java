@@ -1,7 +1,9 @@
 package Testes;
 
+import Core.BasePage;
 import Core.BaseTest;
 import Pages.*;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -14,10 +16,35 @@ public class I_CompraGuestEntregaMM extends BaseTest {
     EnderecoPage enderecoPage = new EnderecoPage();
     EntregaPage entregaPage = new EntregaPage();
     PagamentoPage pagamentoPage = new PagamentoPage();
-
     ItemPage itemPage = new ItemPage();
+    BasePage basePage = new BasePage();
 
-    String dia = "//*[@id=\"ModalCart\"]/div/div[3]/article[2]/div[3]/div/div[1]/div/div/div[2]/div[2]/div[31]/span";
+    String dia = "//*[@id=\"ModalCart\"]/div/div[3]/article[2]/div[3]/div/div[1]/div/div/div[2]/div[2]/div[3]/span";
+
+    //PROMOÇÃO//
+    @Test
+    @DisplayName("Compra Rápida, com um Pneu, entrega MM com promoção, pagamento no Boleto")
+    public void GuestMMBoletoPneu10120011() throws InterruptedException {
+        homePage.barraDePesquisa("10120011");
+        homePage.apertarEnter();
+        vitrinePage.clicarNoProduto();
+        itemPage.clickBtnComprar();
+        carrinhoPage.clickFinalizarCompra();
+        loginPage.guest();
+        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.btnProximoEndereco();
+        entregaPage.entregaMontagemMovel(dia);
+        Thread.sleep(3000);
+        Assert.assertEquals("Combo Básico 1 ou 2 Pneus (Aro 12 - 16) no dia 02/05 com preferência para o período da manhã",basePage.obterTextoComPath("//*[@id=\"rowService\"]/div[3]/p"));
+        Assert.assertEquals("R$ 207,00",basePage.obterTextoComPath("//*[@id=\"rowService\"]/div[2]"));
+        Assert.assertEquals("R$ 747,20",basePage.obterTextoComPath("//*[@id=\"updatedOrderTotals\"]/div/div[2]/div[2]/p[1]"));
+        entregaPage.ProximoEntregaComEspera();
+        pagamentoPage.PagBoletoComEspera();
+        pagamentoPage.FinalizaSuaComprabkp();
+        System.out.println(pagamentoPage.ObterNumeroPedido());
+    }
+    //PROMOÇÃO//
+
 
     //COM UM PNEU
     @Test

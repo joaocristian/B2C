@@ -21,9 +21,8 @@ public class L_CompraPFEntregaMM extends BaseTest {
     //COM UM PNEU
     @Test
     @DisplayName("Compra PF, com um Pneu, entrega MM, pagamento no Boleto")
-    public void PFMMBoletoPneu10070194() throws InterruptedException {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void PFMMBoletoPneu10040529() throws InterruptedException {
+        homePage.barraDePesquisa("10040529");
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();

@@ -24,7 +24,6 @@ public class BasePage {
     }
 
     public void escreverCep(){
-        WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".postalCode")));
         escreverTextoCSS(".postalCode","06445-500");
     }
@@ -225,8 +224,16 @@ public class BasePage {
     }
 
     public void clicarLinkXpath(String xpath){
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(className("loading")));
-        getDriver().findElement(xpath(xpath)).click();
+        try{
+            getDriver().findElement(xpath(xpath)).click();
+        }
+        catch (Exception ex ){
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+            getDriver().findElement(xpath(xpath)).click();
+        }
+
+
     }
 
     public void clicarLinkXpath1(String xpath){
@@ -260,7 +267,8 @@ public class BasePage {
 
     /******** Teclado *******/
 
-    public void apertarEnterTeclado(String id_enter) {
+    public void apertarEnterTeclado(String id_enter) throws InterruptedException {
+        //Thread.sleep(1000);
         getDriver().findElement(id(id_enter)).sendKeys(Keys.ENTER);
     }
 

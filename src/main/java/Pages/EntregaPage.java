@@ -16,13 +16,15 @@ public class EntregaPage extends BasePage {
 
     WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
+    public void ProximoEntrega() {
+        cliqueBotao("nextButtonSubmit");
+    }
     public void btnProximoEntrega() {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("nextButtonSubmit")));
         clicarComEsperaID("nextButtonSubmit");
     }
 
     public void btnProximoEntregabkp() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(className("modal__content")));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nextButtonSubmit")));
         wait.until(ExpectedConditions.elementToBeClickable(By.id("nextButtonSubmit")));
@@ -80,6 +82,11 @@ public class EntregaPage extends BasePage {
     public void entregaNormal() throws InterruptedException {
        cliqueBotaoXpath("//*[@id=\"js-delivery-widget\"]/div[1]/ul/li[2]/ul/li/div");
 
+
+    }
+
+    public void normalNoCarrinho(){
+        cliqueBotaoXpath("//*[@id=\"js-delivery-widget\"]/div[1]/ul/li/ul/li/div");
     }
 
     public void entregaNormalCX() throws InterruptedException {
@@ -203,19 +210,29 @@ public class EntregaPage extends BasePage {
         vitrineServicos.concluir();
     }
 
-    public  void entregaMontagemMovel(String dia) throws InterruptedException {
+    public  void entregaMontagemMovelPromo(String dia) throws InterruptedException {
         clicarComClassName("delivery-options__list__item__content");
+        Thread.sleep(1000);
+        Assert.assertEquals("R$ 63,92",obterTextoComPath("//*[@id=\"ModalCart\"]/div/div[3]/article[1]/div[3]/ul/li/div[2]/div/ul/li[1]/div[3]/div[1]/div/span[2]"));
+        Thread.sleep(1000);
+        Assert.assertEquals("R$ 95,92",obterTextoComPath("//*[@id=\"ModalCart\"]/div/div[3]/article[1]/div[3]/ul/li/div[2]/div/ul/li[2]/div[3]/div[1]/div/span[2]"));
+        Thread.sleep(1000);
         clicarComClassName("delivery-service__list__item__info");
+        Thread.sleep(1000);
+        clicarComEsperaPath("//*[@id=\"ModalCart\"]/div/div[3]/article[2]/div[3]/div/div[1]/div/div/div[1]/div[3]/div");
+        Thread.sleep(1000);
         clicarComEsperaPath(dia);
+        Thread.sleep(1000);
         clicarComEsperaID("MORNING");
+        Thread.sleep(1000);
         clicarComEsperaPath("//*[@id=\"confirmarBtn\"]");
     }
 
-    public  void entregaMontagemMovelbhp() throws InterruptedException {
-        clicarComEsperaPath("//*[@id=\"js-delivery-widget\"]/div[1]/ul/li[1]/div[2]");
-        clicarComEsperaID("PI10070318");
-        clicarComEsperaPath("//*[@id=\"ModalCart\"]/div/div[3]/article[2]/div[3]/div/div[1]/div/div/div[1]/div[3]");
-        clicarComEsperaPath("//*[@id=\"ModalCart\"]/div/div[3]/article[2]/div[3]/div/div[1]/div/div/div[2]/div[2]/div[5]/span");
+    public  void entregaMontagemMovel(String dia) throws InterruptedException {
+        clicarComClassName("delivery-options__list__item__content");
+        clicarComClassName("delivery-service__list__item__info");
+        clicarComEsperaPath("//*[@id=\"ModalCart\"]/div/div[3]/article[2]/div[3]/div/div[1]/div/div/div[1]/div[3]/div");
+        clicarComEsperaPath(dia);
         clicarComEsperaID("MORNING");
         clicarComEsperaPath("//*[@id=\"confirmarBtn\"]");
     }
@@ -240,7 +257,7 @@ public class EntregaPage extends BasePage {
         clicarComEsperaPath("//*[@id=\"confirmarBtn\"]");
     }
 
-    public  void entregaMontagemMovelCom2serviços() throws InterruptedException {
+    public  void entregaMontagemMovelCom2servicos() throws InterruptedException {
         clicarComEspera("loaging","montagemBtn","/html/body/main/div[5]/div[2]/div/div/div[1]/article[3]/div[2]/div/div/form/div/div/div[1]/ul/li[1]/div[2]/div[1]/button");
         clicarComEspera("loading","PI10070318","//*[@id=\"PI10070318\"]");
         clicarComEspera("loading","10070194","//*[@id=\"10070194\"]");

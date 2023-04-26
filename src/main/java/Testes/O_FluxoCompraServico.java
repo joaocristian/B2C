@@ -17,7 +17,7 @@ public class O_FluxoCompraServico extends BaseTest {
 
     // COMPRAR SERVIÇOS AVULSOS //
     @Test
-    public void comprarDoisOuMaisServiçosAvulsosDaMesmaCategoria() throws InterruptedException {
+    public void comprarDoisOuMaisServicosAvulsosDaMesmaCategoria() throws InterruptedException {
         homePage.servicosParaCarro();
         vitrineServicos.SelecioneoTipoDeVeiculoComEspera("measures","12-16");
          vitrineServicos.quantidadeDePneu("qty","1");

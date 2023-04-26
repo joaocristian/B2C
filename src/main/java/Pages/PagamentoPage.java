@@ -87,7 +87,7 @@ public class PagamentoPage extends BasePage {
     }
 
     public void PagBoleto(){
-        clicarComEsperaID("boletoGrp");
+        cliqueBotao("boletoGrp");
     }
 
     public void pagBoletoCX(){

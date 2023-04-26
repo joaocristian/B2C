@@ -14,27 +14,18 @@ public class ItemPage extends BasePage {
     WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
 
     public String obterPrecoAVistaItem(){
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/main/div[4]/div[2]/div[3]/div[3]/div[1]")));
         return obterTexto(By.xpath("/html/body/main/div[4]/div[2]/div[3]/div[3]/div[1]"));
 
     }
 
     public String obterPrecoParceladoItem(){
-        return obterTexto(By.cssSelector(".prices > p"));
+        return obterTexto(By.xpath("/html/body/main/div[4]/div[2]/div[3]/div[3]/p"));
     }
 
-    public void clickBtnComprar(){
-        try{
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loading")));
-            wait.until(ExpectedConditions.elementToBeClickable(By.id("addToCartButton")));
-            cliqueBotao("addToCartButton");
-        }
-        catch (Exception ex){
-            cliqueBotao("addToCartButton");
-        }
-
-
+    public void clickBtnComprar() throws InterruptedException {
+        //Thread.sleep(1000);
+        cliqueBotao("addToCartButton");
     }
 
     public void clickBtnComprar2(){

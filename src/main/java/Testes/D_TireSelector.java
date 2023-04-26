@@ -31,6 +31,8 @@ public class D_TireSelector extends BaseTest {
     @Test
     public void carrosL1050() throws InterruptedException {
         //homePage.carrosL1050P105R15();
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
         homePage.carrosL1050P8R15();
         homePage.carrosL1050P31R15();
         homePage.carrosL1050P33R15();
@@ -43,12 +45,18 @@ public class D_TireSelector extends BaseTest {
         //homePage.carrosL1150P70R15();
         //homePage.carrosL1150P75R15();
         homePage.carrosL1150P32R15();
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
         homePage.carrosL1150PsR15();
     }
 
     @Test
     public void carrosL1250() throws InterruptedException {
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
         homePage.carrosL1250P10R17();
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
         homePage.carrosL1250P33R20();
         homePage.carrosL1250P35R15();
         homePage.carrosL1250P35R17();
@@ -64,16 +72,30 @@ public class D_TireSelector extends BaseTest {
 
     @Test
     public void carrosL155() throws InterruptedException {
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155P60R15();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155P70R14();
         homePage.carrosL155P70R17();
         homePage.carrosL155P70R19();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155P80R19();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155P90R18();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155PsR14();
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155PsR15();
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155PsR17();
+        homePage.clicarNoPneuStore();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155PsR18();
+        homePage.clicarNoPneuStore();
         homePage.carrosL155PsR19();
     }
 
@@ -81,14 +103,19 @@ public class D_TireSelector extends BaseTest {
     public void carrosL165() throws InterruptedException {
         homePage.carrosL165P35R17();
         //homePage.carrosL165P35R18();
+        homePage.clicarNoPneuStore();
         homePage.carrosL165P40R17();
+        homePage.clicarNoPneuStore();
         homePage.carrosL165P45R15();
+        homePage.clicarNoPneuStore();
         homePage.carrosL165P60R14();
         //homePage.carrosL165P65R13();
         homePage.carrosL165P65R14();
         homePage.carrosL165P70R13();
         homePage.carrosL165P70R14();
+        homePage.clicarNoPneuStore();
         homePage.carrosL165PsR13();
+        homePage.clicarNoPneuStore();
         homePage.carrosL165PsR14();
         homePage.carrosL165PsR15();
         homePage.carrosL165PsR17();
@@ -110,6 +137,7 @@ public class D_TireSelector extends BaseTest {
         //homePage.carrosL175P90R14();
         homePage.carrosL175PsR13();
         homePage.carrosL175PsR14();
+        homePage.clicarNoPneuStore();
         homePage.carrosL175PsR15();
         //homePage.carrosL175PsR18();
         homePage.carrosL175PsR19();

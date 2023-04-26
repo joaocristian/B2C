@@ -248,7 +248,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
     //TRUCK //
     @Test
     public void comprarServicoDeTruckPesadoExtraPesadoCombo1e2PF() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculoComEspera("measures", "Pesado / Extra Pesado");
         vitrineServicos.quantidadeDePneu("qty", "2");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -270,7 +270,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarServicoDeTruckPesadoExtraPesadoCombo3e4PF() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculoComEspera("measures", "Pesado / Extra Pesado");
         vitrineServicos.quantidadeDePneu("qty", "2");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -291,7 +291,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarServicoDeTruck34Combo1e2PF() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculo("measures", "3/4");
         vitrineServicos.quantidadeDePneu("qty", "3");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -301,7 +301,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
         vitrineServicos.concluirComEspera();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverEndereçoGuestVindoDoCarrinho();
+        enderecoPage.escreverEnderecoGuestVindoDoCarrinho();
         entregaPage.ProximoEntregaComEsperaPreprod();
         pagamentoPage.PagPix();
         pagamentoPage.FinalizaSuaCompra();
@@ -310,7 +310,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarServicoDeTruck34Combo3e4PF() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculo("measures", "3/4");
         vitrineServicos.quantidadeDePneu("qty", "3");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -350,7 +350,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
         enderecoPage.escreverNumeroDaCasa();
         enderecoPage.btnProximoEndereco();
         entregaPage.ProximoEntregaComEsperaPreprod();
-        pagamentoPage.PagPix();
+        pagamentoPage.PagBoleto();
         pagamentoPage.FinalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -371,7 +371,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
         enderecoPage.escreverNumeroDaCasa();
         enderecoPage.btnProximoEndereco();
         entregaPage.ProximoEntregaComEsperaPreprod();
-        pagamentoPage.PagPix();
+        pagamentoPage.PagBoleto();
         pagamentoPage.FinalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -392,7 +392,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
         enderecoPage.escreverNumeroDaCasa();
         enderecoPage.btnProximoEndereco();
         entregaPage.ProximoEntregaComEsperaPreprod();
-        pagamentoPage.PagPix();
+        pagamentoPage.PagBoleto();
         pagamentoPage.FinalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -570,7 +570,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
     //TRUCK //
     @Test
     public void comprarServicoDeTruckPesadoExtraPesadoCombo1e2() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculoComEspera("measures", "Pesado / Extra Pesado");
         vitrineServicos.quantidadeDePneu("qty", "2");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -591,7 +591,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarServicoDeTruckPesadoExtraPesadoCombo3e4() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculo("measures", "Pesado / Extra Pesado");
         vitrineServicos.quantidadeDePneu("qty", "2");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -612,7 +612,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarServicoDeTruck34Combo1e2() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculo("measures", "3/4");
         vitrineServicos.quantidadeDePneu("qty", "3");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -622,7 +622,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
         vitrineServicos.concluirComEspera();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverEndereçoGuestVindoDoCarrinho();
+        enderecoPage.escreverEnderecoGuestVindoDoCarrinho();
         entregaPage.ProximoEntregaComEsperaPreprod();
         pagamentoPage.PagPix();
         pagamentoPage.FinalizaSuaCompra();
@@ -631,7 +631,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarServicoDeTruck34Combo3e4() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculo("measures", "3/4");
         vitrineServicos.quantidadeDePneu("qty", "3");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -1203,7 +1203,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverEndereçoGuestVindoDoCarrinho();
+        enderecoPage.escreverEnderecoGuestVindoDoCarrinho();
         entregaPage.btnProximoEntrega();
         pagamentoPage.PagNupay();
         pagamentoPage.FinalizaSuaCompra();
@@ -1257,7 +1257,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
         entregaPage.entregaRetiraNovoComEspera();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverEndereçoGuestVindoDoCarrinho();
+        enderecoPage.escreverEnderecoGuestVindoDoCarrinho();
         entregaPage.btnProximoEntrega();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaCompra();
@@ -1283,7 +1283,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
         entregaPage.entregaRetiraNovoComEspera();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverEndereçoGuestVindoDoCarrinho();
+        enderecoPage.escreverEnderecoGuestVindoDoCarrinho();
         entregaPage.btnProximoEntrega();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaCompra();
@@ -1359,7 +1359,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarTruck34ComPneupesadoGuest() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculoComEspera("measures", "3/4");
         vitrineServicos.quantidadeDePneu("qty", "3");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -1387,7 +1387,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarTruck34ComPneupesadoPF() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculo("measures", "3/4");
         vitrineServicos.quantidadeDePneu("qty", "3");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -1415,7 +1415,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarTruckPesadoComPneupesadoGuest() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculoComEspera("measures", "Pesado / Extra Pesado");
         vitrineServicos.quantidadeDePneu("qty", "3");
         vitrineServicos.informeSeuCEP("cep", cep);
@@ -1443,7 +1443,7 @@ public class F_FluxoVendaServicoAvulso extends BaseTest {
 
     @Test
     public void comprarTruckPesadoComPneupesadoPF() throws Exception {
-        homePage.serviçosParaTruck();
+        homePage.servicosParaTruck();
         vitrineServicos.SelecioneoTipoDeVeiculo("measures", "Pesado / Extra Pesado");
         vitrineServicos.quantidadeDePneu("qty", "3");
         vitrineServicos.informeSeuCEP("cep", cep);

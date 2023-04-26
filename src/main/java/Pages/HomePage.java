@@ -63,14 +63,14 @@ public class HomePage extends BasePage {
     public String menu_agricolaTratores = "Tratores";
     public String menu_quadricicloPneusParaQuadriciclo = "Pneus Para Quadriciclo";
     public String menu_acessorios = "Acessórios";
-    public String menu_acessórios_externo = "Acessórios Externo";
-    public String menu_acessórios_interno = "Acessórios Interno";
-    public String menu_som_e_vídeo = "Som e Vídeo";
+    public String menu_acessorios_externo = "Acessórios Externo";
+    public String menu_acessorios_interno = "Acessórios Interno";
+    public String menu_som_e_video = "Som e Vídeo";
     public String menu_diversos = "Diversos";
     public String menu_camaras_de_ar = "Câmaras de Ar";
     public String menu_camaras_de_ar_para_caminhao = "Câmaras de Ar";
     public String menu_protetor_de_aro = "Protetor de Aro";
-    public String menu_acessórios_para_bicicleta = "/html/body/main/nav/div/div/ul/li[2]/div/div/div[2]/div/div[4]/ul/li[3]/a";
+    public String menu_acessorios_para_bicicleta = "/html/body/main/nav/div/div/ul/li[2]/div/div/div[2]/div/div[4]/ul/li[3]/a";
     public String menu_camaras_de_ar_para_bicicleta = "/html/body/main/nav/div/div/ul/li[2]/div/div/div[2]/div/div[4]/ul/li[2]/a";
     public String menu_oleo_carro = "Óleo Carro";
     public String menu_oleo_moto = "Óleo Moto";
@@ -112,7 +112,6 @@ public class HomePage extends BasePage {
     }
 
     public void barraDePesquisa(String id_item){
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("js-site-search-input")));
         escreverSemClear("js-site-search-input",id_item);
 
@@ -132,14 +131,14 @@ public class HomePage extends BasePage {
         cliqueBotaoXpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[2]/a");
     }
 
-    public void serviçosParaTruck(){
+    public void servicosParaTruck(){
         WebDriverWait wait = (new WebDriverWait(getDriver(), Duration.ofSeconds(50)));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[3]/a")));
         cliqueBotaoXpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[3]/a");
 
     }
 
-    public void apertarEnter(){
+    public void apertarEnter() throws InterruptedException {
         apertarEnterTeclado("js-site-search-input");
     }
 
@@ -576,21 +575,21 @@ public class HomePage extends BasePage {
 
     public void acessoriosAcessoriosParaCarroAcessoriosExterno() {
         pausarMouseNoMenuLink(menu_acessorios);
-        clicarLink(menu_acessórios_externo);
+        clicarLink(menu_acessorios_externo);
         vitrinePage.conferirTitulo2("Acessórios Externo");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void acessoriosAcessoriosParaCarroAcessoriosInterno() {
         pausarMouseNoMenuLink(menu_acessorios);
-        clicarLink(menu_acessórios_interno);
+        clicarLink(menu_acessorios_interno);
         vitrinePage.conferirTitulo2("Acessórios Interno");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void acessoriosAcessoriosParaCarroSomeVideo() {
         pausarMouseNoMenuLink(menu_acessorios);
-        clicarLink(menu_som_e_vídeo);
+        clicarLink(menu_som_e_video);
         vitrinePage.conferirTitulo2("Som e Vídeo");
         vitrinePage.clicarNaPneuStore();
     }
@@ -625,7 +624,7 @@ public class HomePage extends BasePage {
 
     public void acessoriosAcessoriosParaBicicletaAcessoriosParaBicicleta() {
         pausarMouseNoMenuLink(menu_acessorios);
-        cliqueBotaoXpath(menu_acessórios_para_bicicleta);
+        cliqueBotaoXpath(menu_acessorios_para_bicicleta);
         vitrinePage.conferirTitulo2("Diversos - Bicicleta");
         vitrinePage.clicarNaPneuStore();
     }
@@ -902,7 +901,6 @@ public class HomePage extends BasePage {
     //Busca Por Categoria -  Fim//
 
 
-    //D_TireSelector_Preprod -  Inicio//
     public void carrosL560P100R15() throws InterruptedException {
         buscarPorMedidaLargura("5.60");
         buscarPorMedidaPerfil("100");
@@ -952,11 +950,11 @@ public class HomePage extends BasePage {
     }
 
     public void carrosL1050P8R15() throws InterruptedException {
-        buscarPorMedidaLargura("10.50");
-        buscarPorMedidaPerfil("8");
-        buscarPorMedidaAro("15");
-        btnBuscaMedida();
-        clicarNoPneuStore();
+            buscarPorMedidaLargura("10.50");
+            buscarPorMedidaPerfil("8");
+            buscarPorMedidaAro("15");
+            btnBuscaMedida();
+            clicarNoPneuStore();
     }
 
     public void carrosL1050P31R15() throws InterruptedException {
@@ -965,6 +963,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("15");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL1050P33R15() throws InterruptedException {
@@ -1096,6 +1095,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("14");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL155PsR14() throws InterruptedException {
@@ -1104,6 +1104,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("14");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL155PsR15() throws InterruptedException {
@@ -1120,6 +1121,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("17");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL165P35R18() throws InterruptedException {
@@ -1136,6 +1138,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("17");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL165P45R15() throws InterruptedException {
@@ -1144,6 +1147,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("15");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL165P60R14() throws InterruptedException {
@@ -1168,6 +1172,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("14");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL165P70R13() throws InterruptedException {
@@ -1176,6 +1181,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("13");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL165P70R14() throws InterruptedException {
@@ -1192,6 +1198,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("13");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL165PsR14() throws InterruptedException {
@@ -1200,6 +1207,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("14");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL165PsR15() throws InterruptedException {
@@ -1208,6 +1216,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("13");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL165PsR17() throws InterruptedException {
@@ -1328,6 +1337,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("15");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL175PsR18() throws InterruptedException {
@@ -1536,6 +1546,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("15");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL195P60R16() throws InterruptedException {
@@ -1791,6 +1802,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("16");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL215PsR15() throws InterruptedException {
@@ -1855,6 +1867,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("17");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL205P40R18() throws InterruptedException {
@@ -2259,6 +2272,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("17");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL225PsR18() throws InterruptedException {
@@ -2428,6 +2442,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("15");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL155P70R17() throws InterruptedException {
@@ -2436,6 +2451,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("17");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL155P70R19() throws InterruptedException {
@@ -2484,6 +2500,7 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("19");
         btnBuscaMedida();
         clicarNoPneuStore();
+        Thread.sleep(2000);
     }
 
     public void carrosL195P35R18() throws InterruptedException {
@@ -2501,11 +2518,4 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
-    /*public void clicarRevenda() {
-        cliqueBotaoXpath("/html/body/main/nav/div/div/ul/li[6]/span/a");
-        Assert.assertEquals();
-    }*/
-
-    //D_TireSelector_Preprod -  Fim//
 }
