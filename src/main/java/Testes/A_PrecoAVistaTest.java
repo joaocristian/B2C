@@ -19,16 +19,42 @@ public class A_PrecoAVistaTest extends BaseTest {
     private CarrinhoPage carrinhoPage = new CarrinhoPage();
 
     //DADOS PARA O TESTE//
-    String pneuItaro = "IT16000050";String vitrinePrecoAVista = "R$ 1.159,59";String vitrinePrecoParcelado = "ou 10x de R$ 131,77";String precoAVistaItem = "R$ 1.159,59no PIX";
+    String pneuItaro = "IT16000050";
+    String vitrinePrecoAVista = "R$ 988,29";
+    String vitrinePrecoParcelado = "ou 10x de R$ 131,77";
+    String precoAVistaItem = "R$ 988,29no PIX";
     String precoParceladoItem = "ou R$ 1.317,72 em até 10x de R$ 131,77 sem juros\n" +
             "Veja mais opções de pagamentos clicando aqui!";
 
-    String pneuContinental = "10120084";String vitrinePrecoAVistaContinental = "R$ 579,90";String vitrinePrecoParceladoContinental = "ou 10x de R$ 65,90";String precoAVistaItemContinental = "R$ 579,90no PIX";
+    String pneuContinental = "10120084";
+    String vitrinePrecoAVistaContinentalPromo = "R$ 247,12";
+    String vitrinePrecoAVistaContinental = "R$ 579,90";
+    String vitrinePrecoParceladoContinental = "ou 10x de R$ 65,90";
+    String vitrinePrecoParceladoContinentalPromo = "ou 10x de R$ 32,95";
+    String precoAVistaItemContinental = "R$ 579,90no PIX";
+    String precoAVistaItemContinentalPromo = "R$ 247,12no PIX";
     String precoParceladoItemContinental = "ou R$ 658,98 em até 10x de R$ 65,90 sem juros\n" +
             "Veja mais opções de pagamentos clicando aqui!";
 
+    String precoParceladoItemContinentalPromo = "ou R$ 329,49 em até 10x de R$ 32,95 sem juros\n" +
+            "Veja mais opções de pagamentos clicando aqui!";
+    boolean promo = true;
+
+
     @Test
-    public void testBuscarPorItemContinental() throws InterruptedException {
+    public  void testeBuscarPorItemContinentalCondicional() throws InterruptedException {
+        if (promo){
+            testBuscarPorItemContinentalPromo();
+        }
+        else{
+            testBuscarPorItemContinental();
+        }
+
+
+    }
+
+    @Test
+    public void testBuscarPorItemItaro() throws InterruptedException {
         homePage.barraDePesquisa(pneuItaro);
         homePage.apertarEnter();
         Assert.assertEquals(vitrinePrecoAVista,vitrinePage.vitrineObterPrecoAVista());
@@ -38,8 +64,7 @@ public class A_PrecoAVistaTest extends BaseTest {
         Assert.assertEquals(precoParceladoItem,itemPage.obterPrecoParceladoItem());
     }
 
-    @Test
-    public void testBuscarPorItemContinentalCX() throws InterruptedException {
+    public void testBuscarPorItemContinental() throws InterruptedException {
         homePage.barraDePesquisa(pneuContinental);
         homePage.apertarEnter();
         Assert.assertEquals(vitrinePrecoAVistaContinental,vitrinePage.vitrineObterPrecoAVista());
@@ -47,6 +72,15 @@ public class A_PrecoAVistaTest extends BaseTest {
         vitrinePage.clickItemXpath("/html/body/main/div[4]/div[1]/div/div/div/div[2]/ul/div/div[1]/div[2]/a/img");
         Assert.assertEquals(precoAVistaItemContinental,itemPage.obterPrecoAVistaItem());
         Assert.assertEquals(precoParceladoItemContinental,itemPage.obterPrecoParceladoItem());
+    }
+    public void testBuscarPorItemContinentalPromo() throws InterruptedException {
+        homePage.barraDePesquisa(pneuContinental);
+        homePage.apertarEnter();
+        Assert.assertEquals(vitrinePrecoAVistaContinentalPromo,vitrinePage.vitrineObterPrecoAVista());
+        Assert.assertEquals(vitrinePrecoParceladoContinentalPromo,vitrinePage.vitrineObterPrecoParcelado());
+        vitrinePage.clickItemXpath("/html/body/main/div[4]/div[1]/div/div/div/div[2]/ul/div/div[1]/div[2]/a/img");
+        Assert.assertEquals(precoAVistaItemContinentalPromo,itemPage.obterPrecoAVistaItemPromo());
+        Assert.assertEquals(precoParceladoItemContinentalPromo,itemPage.obterPrecoParceladoItem());
     }
 }
 

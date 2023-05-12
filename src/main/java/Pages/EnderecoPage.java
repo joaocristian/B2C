@@ -3,7 +3,6 @@ package Pages;
 import Core.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -62,12 +61,17 @@ public class EnderecoPage extends BasePage {
         cliqueBotaoXpath("//*[@id=\"input-3\"]");
     }
 
-    public void btnProximoEndereco() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("nextButtonSubmit")));
+    public void botaoProximoEndereco() {
         cliqueBotao("nextButtonSubmit");
     }
 
-    public void btnProximoEnderecoOficial() {
+    public void btnProximoEndereco() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nextButtonSubmit")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("nextButtonSubmit")));
+        clicarComEsperaID("nextButtonSubmit");
+    }
+
+    public void proximoEndereco() {
         if (obterTexto(By.id("addressTitle"))!=""){
             escreverCasa();
         }
@@ -86,36 +90,36 @@ public class EnderecoPage extends BasePage {
     }
 
     public void btnProximoEnderecoOficial1() {
-        escreverDadosDoEnderecoCheckOut();
+        confeririDadosDoEnderecoCheckOut();
         boolean estado = elementoReadOnly(By.id("regionIso"));
         boolean cidade = elementoReadOnly(By.id("townCity"));
         boolean rua = elementoReadOnly(By.id("line1"));
         boolean bairro = elementoReadOnly(By.id("district"));
-        escreverDadosDoEnderecoCheckOut();
+        confeririDadosDoEnderecoCheckOut();
 
         int cont =0;
         if (estado == true){
             cont = cont+1;
-            escreverDadosDoEnderecoCheckOut();
+            confeririDadosDoEnderecoCheckOut();
         }
 
         if (cidade == true){
             cont = cont+1;
-            escreverDadosDoEnderecoCheckOut();
+            confeririDadosDoEnderecoCheckOut();
         }
 
         if (rua == true){
             cont = cont+1;
-            escreverDadosDoEnderecoCheckOut();
+            confeririDadosDoEnderecoCheckOut();
         }
 
         if (bairro == true){
             cont = cont+1;
-            escreverDadosDoEnderecoCheckOut();
+            confeririDadosDoEnderecoCheckOut();
         }
 
         if (cont==4){
-            escreverDadosDoEnderecoCheckOut();
+            confeririDadosDoEnderecoCheckOut();
             cliqueBotao("nextButtonSubmit");
         }
 
@@ -176,7 +180,7 @@ public class EnderecoPage extends BasePage {
         escreverNumeroDaCasa();
         escreverComplemento();
         escreverReferencia();
-//        Thread.sleep(2000);
+       confeririDadosDoEnderecoCheckOut();
     }
 
     public void escreverDadosDoEndereco04547004() throws InterruptedException {
@@ -196,7 +200,7 @@ public class EnderecoPage extends BasePage {
         escreverNumeroDaCasa();
         escreverComplemento();
         escreverReferencia();
-        escreverDadosDoEnderecoCheckOut();
+        confeririDadosDoEnderecoCheckOut();
     }
 
     public void escreverDadosDoEndereco04547006(){
@@ -222,7 +226,7 @@ public class EnderecoPage extends BasePage {
     }
 
     int cont = 0;
-    public void escreverDadosDoEnderecoCheckOut(){
+    public void confeririDadosDoEnderecoCheckOut(){
         Assert.assertEquals("casa",obterValor(By.id("addressTitle")));
         Assert.assertEquals("04547-004",obterValor(By.id("postcode")));
         Assert.assertEquals("411",obterValor(By.id("line2")));
@@ -230,7 +234,7 @@ public class EnderecoPage extends BasePage {
         Assert.assertEquals("Referencia",obterValor(By.id("reference")));
         cont = cont +1;
         if (cont<=4)
-            escreverDadosDoEnderecoCheckOut();
+            confeririDadosDoEnderecoCheckOut();
 
     }
 

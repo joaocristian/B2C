@@ -2,6 +2,7 @@ package Pages;
 
 import Core.BasePage;
 import org.junit.Assert;
+import org.junit.experimental.theories.Theories;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,12 +17,11 @@ public class EntregaPage extends BasePage {
 
     WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
-    public void ProximoEntrega() {
+    public void proximoEntrega() {
         cliqueBotao("nextButtonSubmit");
     }
-    public void btnProximoEntrega() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("nextButtonSubmit")));
-        clicarComEsperaID("nextButtonSubmit");
+    public void proximoEntregaWait() {
+            clicarComEsperaID("nextButtonSubmit");
     }
 
     public void btnProximoEntregabkp() {
@@ -82,6 +82,12 @@ public class EntregaPage extends BasePage {
     public void entregaNormal() throws InterruptedException {
        cliqueBotaoXpath("//*[@id=\"js-delivery-widget\"]/div[1]/ul/li[2]/ul/li/div");
 
+    }
+
+    public void entregaNormal1() throws InterruptedException {
+        cliqueBotaoXpath("//*[ @id=\"js-delivery-widget\"]/ div[1]/ul/li/ul/li/div");
+
+
 
     }
 
@@ -106,7 +112,7 @@ public class EntregaPage extends BasePage {
         clicarComClassName("col-2");
     }
 
-    public void entregaNormal1() throws InterruptedException {
+    public void entregaNormal1esse() throws InterruptedException {
         clicarComEspera("loading","input-3","//*[@id=\"js-delivery-widget\"]/div[1]/ul/li[3]/ul/li[2]/div/div[2]");
 
     }
@@ -247,6 +253,8 @@ public class EntregaPage extends BasePage {
         clicarComEsperaPath("//*[@id=\"ModalCart\"]/div/div[3]/article[1]/div[3]/ul/li[2]/div[2]/div/ul/li[1]/div[3]/div[2]/span");
         Thread.sleep(1000);
         Assert.assertEquals("APLICADO",obterTextoComPathEspera("//*[@id=\"ModalCart\"]/div/div[3]/article[1]/div[3]/ul/li[2]/div[1]/div[3]/div[2]/span"));
+        Thread.sleep(1000);
+        clicarComEsperaPath("//*[@id=\"ModalCart\"]/div/div[3]/article[2]/div[3]/div/div[1]/div/div/div[1]/div[3]");
         Thread.sleep(1000);
         clicarComEsperaPath(dia);
         Thread.sleep(1000);

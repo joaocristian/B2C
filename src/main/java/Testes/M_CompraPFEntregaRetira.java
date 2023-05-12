@@ -29,9 +29,9 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaRetiraNovoComEspera4();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagBoleto();
-        pagamentoPage.FinalizaSuaCompra();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.boleto();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
@@ -51,9 +51,9 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaRetiraNovoComEspera4();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagPixbkp();
-        pagamentoPage.FinalizaSuaCompra();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
@@ -81,8 +81,8 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.ProximoEntregaComEsperaPreprod();
-        pagamentoPage.PagPix();
-        pagamentoPage.FinalizaSuaCompra();
+        pagamentoPage.pix();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
@@ -112,8 +112,8 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.ProximoEntregaComEsperaPreprod();
-        pagamentoPage.PagPix();
-        pagamentoPage.FinalizaSuaCompra();
+        pagamentoPage.pix();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
@@ -137,8 +137,8 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.selecionaroEndereco04547006CX();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -163,7 +163,7 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -217,7 +217,7 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
         entregaPage.ProximoEntregaComEspera();
-        pagamentoPage.PagPix();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
 
@@ -238,9 +238,9 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
-        pagamentoPage.FinalizaSuaCompra();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
@@ -260,9 +260,9 @@ public class M_CompraPFEntregaRetira extends BaseTest {
          enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalExpresso();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
-        pagamentoPage.FinalizaSuaCompra();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pix();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
@@ -281,9 +281,9 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalExpresso();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.fluxoPagCartaoCredito();
-        pagamentoPage.FinalizaSuaCompra();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
@@ -302,9 +302,9 @@ public class M_CompraPFEntregaRetira extends BaseTest {
         enderecoPage.escolherEndereco();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalExpresso();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.pagNupay();
-        pagamentoPage.FinalizaSuaCompra();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 }

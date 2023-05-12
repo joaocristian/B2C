@@ -25,9 +25,8 @@ public class E_BuscaPorMedidaTest extends BaseTest {
         vitrinePage.conferirProduto("Pneu Atlas Aro 20 Sport Green 225/30R20 85W XL");
         homePage.clicarNoPneuStore();
     }
-
     @Test
-    public void carrosL950P70A15CX() throws InterruptedException{
+    public void carrosL950P70A15() throws InterruptedException{
         homePage.buscarPorMedidaLargura("225");
         homePage.buscarPorMedidaPerfil("30");
         homePage.buscarPorMedidaAro("20");
@@ -35,7 +34,6 @@ public class E_BuscaPorMedidaTest extends BaseTest {
         vitrinePage.conferirProduto("Pneu Atlas Aro 20 Sport Green 225/30R20 85W XL");
         homePage.clicarNoPneuStore();
     }
-
     @Test
     public void buscaPorVeiculo() throws InterruptedException {
         homePage.buscaPorVeiculo();

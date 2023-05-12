@@ -32,7 +32,7 @@ public class L_CompraPFEntregaMM extends BaseTest {
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaMontagemMovel(dia);
         Thread.sleep(2000);
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -51,8 +51,8 @@ public class L_CompraPFEntregaMM extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaMontagemMovel(dia);
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -70,7 +70,7 @@ public class L_CompraPFEntregaMM extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaMontagemMovel(dia);
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -89,7 +89,7 @@ public class L_CompraPFEntregaMM extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaMontagemMovel(dia);
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido1());
@@ -109,7 +109,7 @@ public class L_CompraPFEntregaMM extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaMontagemMovel(dia);
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido1());
@@ -129,8 +129,8 @@ public class L_CompraPFEntregaMM extends BaseTest {
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaMontagemMovel(dia);
         Thread.sleep(2000);
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix1();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pixWait();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido1());
     }
@@ -148,7 +148,7 @@ public class L_CompraPFEntregaMM extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaMontagemMovel(dia);
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -167,7 +167,7 @@ public class L_CompraPFEntregaMM extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaMontagemMovel(dia);
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.pagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -199,7 +199,7 @@ public class L_CompraPFEntregaMM extends BaseTest {
         entregaPage.entregaMontagemMovel2x(dia);
         Thread.sleep(1000);
         entregaPage.ProximoEntregaComEspera();
-        pagamentoPage.PagPix();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }

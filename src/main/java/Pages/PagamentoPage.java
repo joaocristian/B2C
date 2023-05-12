@@ -7,12 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.TreeMap;
 
 import static Core.DriverFactory.getDriver;
-import static java.lang.Thread.*;
 import static org.openqa.selenium.By.className;
-import static org.openqa.selenium.By.id;
 
 public class PagamentoPage extends BasePage {
 
@@ -86,17 +83,27 @@ public class PagamentoPage extends BasePage {
         nomedoCartao();
     }
 
-    public void PagBoleto(){
+    public void boleto(){
         cliqueBotao("boletoGrp");
     }
 
+    public void boletoComEspera() {
+        try {
+            cliqueBotao("boletoGrp");
+        }
+        catch (Exception ex){
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loading")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.id("boletoGrp")));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.id("boletoGrp")));
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(className("loading")));
+            clicarComEsperaID("boletoGrp");
+        }
+    }
     public void pagBoletoCX(){
         cliqueBotaoXpath("//*[@id=\"boletoGrp\"]/label/svg/path");
     }
 
     public void PagBoletoComEspera(){
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(className("loading")));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"boletoGrp\"]")));
         clicarComEspera("loading","boletoGrp","//*[@id=\"boletoGrp\"]");
     }
 
@@ -105,19 +112,30 @@ public class PagamentoPage extends BasePage {
         clicarComEspera("loading","boletoGrp","//*[@id=\"boletoGrp\"]");
     }
 
-    public void PagPix() {
+    public void pix() {
+        try{
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(className("loading")));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.id("pixGrp")));
+            cliqueBotao( "pixGrp");
+        }
+        catch (Exception ex ){
+            cliqueBotao( "pixGrp");
+        }
+    }
+
+    public void pixWait() {
         clicarComEsperaID( "pixGrp");
     }
 
-    public void PagPix1() {
-        cliqueBotao( "pixGrp");
-    }
-
     public void PagPixbkp() {
-        WebDriverWait wait = (new WebDriverWait(getDriver(), Duration.ofSeconds(10)));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(className("loading")));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("pixGrp")));
-        cliqueBotao( "pixGrp");
+        try{
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(className("loading")));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.id("pixGrp")));
+            cliqueBotao( "pixGrp");
+        }
+        catch (Exception ex ){
+            cliqueBotao( "pixGrp");
+        }
     }
 
     public void PagNupay() {
@@ -140,7 +158,7 @@ public class PagamentoPage extends BasePage {
         clicarComEspera("loading", "nupayGrp", "//*[@id=\"nupayGrp\"]");
     }
 
-    public void FinalizaSuaCompra(){
+    public void finalizaSuaCompra(){
         clicarComEsperaID("nextButtonSubmit");
     }
 

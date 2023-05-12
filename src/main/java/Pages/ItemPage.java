@@ -19,12 +19,19 @@ public class ItemPage extends BasePage {
 
     }
 
+    public String obterPrecoAVistaItemPromo(){
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/main/div[4]/div[2]/div[3]/div[3]/div[1]")));
+        return obterTexto(By.xpath("/html/body/main/div[4]/div[2]/div[3]/div[3]/div[2]"));
+
+
+    }
+
     public String obterPrecoParceladoItem(){
         return obterTexto(By.xpath("/html/body/main/div[4]/div[2]/div[3]/div[3]/p"));
     }
 
     public void clickBtnComprar() throws InterruptedException {
-        //Thread.sleep(1000);
+        Thread.sleep(4000);
         cliqueBotao("addToCartButton");
     }
 

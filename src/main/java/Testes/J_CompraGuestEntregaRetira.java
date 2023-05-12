@@ -1,6 +1,7 @@
 package Testes;
 
 import Core.BaseTest;
+import Dados.DadosParaTeste;
 import Pages.*;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -16,59 +17,60 @@ public class J_CompraGuestEntregaRetira extends BaseTest {
 
     ItemPage itemPage = new ItemPage();
 
-    //COM UM PNEU
+//COM UM PNEU
     @Test
     @DisplayName("Compra Rápida, com um Pneu, entrega Retira, pagamento no Pix")
-    public void GuestRetiraPixPneu10070194() throws Exception {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestRetiraPixPneu() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        entregaPage.btnProximoEntrega();
+        entregaPage.entregaRetiraNovoComEspera();
+        entregaPage.proximoEntregaWait();
         Thread.sleep(1000);
-        pagamentoPage.PagPix();
+        pagamentoPage.pixWait();
         pagamentoPage.FinalizaSuaCompraOficial();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
     @Test
     @DisplayName("Compra Rápida, com um Pneu, entrega Retira, pagamento no Boleto")
-    public void GuestRetiraBoletoPneu10070194() throws Exception {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestRetiraBoletoPneu() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagBoletoComEspera();
+        entregaPage.entregaRetiraNovoComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
+        pagamentoPage.boletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
     @Test
     @DisplayName("Compra Rápida, com um Pneu, entrega Retira, pagamento no Cartão de Crédito")
-    public void GuestRetiraCCPneu10070194() throws Exception {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestRetiraCCPneu() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        entregaPage.btnProximoEntrega();
+        entregaPage.entregaRetiraNovoComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -76,76 +78,79 @@ public class J_CompraGuestEntregaRetira extends BaseTest {
 
     @Test
     @DisplayName("Compra Rápida, com um Pneu, entrega Retira, pagamento no Nupay")
-    public void GuestRetiraNupayPneu10070194() throws Exception {
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+    public void GuestRetiraNupayPneu() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        entregaPage.btnProximoEntrega();
+        entregaPage.entregaRetiraNovoComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
         pagamentoPage.pagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
-    //COM JOGO
+//COM JOGO
    @Test
     @DisplayName("Compra Rápida, com um Jogo, entrega Retira, pagamento no Pix")
-    public void GuestRetiraPixJogoIT16001186() throws Exception {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestRetiraPixJogo() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        Thread.sleep(2000);
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
-        pagamentoPage.FinalizaSuaComprabkp();
-        System.out.println(pagamentoPage.ObterNumeroPedido());
+       entregaPage.entregaRetiraNovoComEspera();
+       Thread.sleep(5000);
+       entregaPage.proximoEntregaWait();
+       Thread.sleep(5000);
+       pagamentoPage.pixWait();
+       pagamentoPage.FinalizaSuaComprabkp();
+       System.out.println(pagamentoPage.ObterNumeroPedido());
     }
     @Test
     @DisplayName("Compra Rápida, com um Jogo, entrega Retira, pagamento no Boleto")
-    public void GuestRetiraBoletoJogoIT16001186() throws Exception {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestRetiraBoletoJogo() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagBoletoComEspera();
+        entregaPage.entregaRetiraNovoComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
+        pagamentoPage.boletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
-        System.out.println(pagamentoPage.ObterNumeroPedido1());
+        System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
     @Test
     @DisplayName("Compra Rápida, com um Jogo, entrega Retira, pagamento no Cartão de Crédito")
-    public void GuestRetiraCCJogoIT16001186() throws Exception {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestRetiraCCJogo() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        entregaPage.btnProximoEntrega();
+        entregaPage.entregaRetiraNovoComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -153,18 +158,19 @@ public class J_CompraGuestEntregaRetira extends BaseTest {
 
     @Test
     @DisplayName("Compra Rápida, com um Jogo, entrega Retira, pagamento no Nupay")
-    public void GuestRetiraNupayJogoIT16001186() throws Exception {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestRetiraNupayJogo() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        entregaPage.btnProximoEntrega();
+        entregaPage.entregaRetiraNovoComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
         pagamentoPage.pagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -174,117 +180,113 @@ public class J_CompraGuestEntregaRetira extends BaseTest {
     //COM PNEU + JOGO
     @Test
     @DisplayName("Compra Rápida, com um Pneu + Jogo, entrega Retira, com CUPOM (TONIMEKPASSEIO), pagamento no Pix")
-    public void GuestRetiraPixJogoGO10130051MaisPneu16000061CUPOM() throws Exception {
-        homePage.barraDePesquisa("GO101");
-        homePage.barraDePesquisa("30051");
+    public void GuestRetiraPixJogoMaisPneuCUPOM() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1010");
-        homePage.barraDePesquisa("0079");
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
         carrinhoPage.clickCalcularCEP();
-        carrinhoPage.fluxoCupom("TONIMEKPASSEIO");
+        carrinhoPage.fluxoCupom(DadosParaTeste.cupom);
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        Thread.sleep(1000);
-        entregaPage.ProximoEntregaComEspera();
-        pagamentoPage.PagPix();
+        entregaPage.entregaRetiraNovo2xComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
+        pagamentoPage.pixWait();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
     @Test
     @DisplayName("Compra Rápida, com um Pneu + Jogo, entrega Retira, com CUPOM (TONIMEKPASSEIO), pagamento no Boleto")
-    public void GuestRetiraBoletoJogoGO10130051MaisPneu16000061CUPOM() throws Exception {
-        homePage.barraDePesquisa("GO101");
-        homePage.barraDePesquisa("30051");
+    public void GuestRetiraBoletoJogoMaisPneuCUPOM() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1010");
-        homePage.barraDePesquisa("0079");
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
         carrinhoPage.clickCalcularCEP();
-        carrinhoPage.fluxoCupom("TONIMEKPASSEIO");
+        carrinhoPage.fluxoCupom(DadosParaTeste.cupom);
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        Thread.sleep(1000);
-        entregaPage.ProximoEntregaComEspera();
-        pagamentoPage.PagBoletoComEspera();
+        entregaPage.entregaRetiraNovo2xComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
+        pagamentoPage.boletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
     @Test
     @DisplayName("Compra Rápida, com um Pneu + Jogo, entrega Retira, com CUPOM (TONIMEKPASSEIO), pagamento no Cartão de Crédito")
-    public void GuestRetiraCCJogoGO10130051MaisPneu16000061CUPOM() throws Exception {
-        homePage.barraDePesquisa("GO101");
-        homePage.barraDePesquisa("30051");
+    public void GuestRetiraCCJogoMaisPneuCUPOM() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1010");
-        homePage.barraDePesquisa("0079");
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
         carrinhoPage.clickCalcularCEP();
-        carrinhoPage.fluxoCupom("TONIMEKPASSEIO");
-        carrinhoPage.clickFinalizarCompraComEsperaOficial();
-        loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
-        enderecoPage.btnProximoEndereco();
-        entregaPage.entregaRetiraNovo();
-        Thread.sleep(1000);
-        entregaPage.ProximoEntregaComEspera();
-        pagamentoPage.fluxoPagCartaoCredito();
-        pagamentoPage.FinalizaSuaCompraOficial();
-        System.out.println(pagamentoPage.ObterNumeroPedido());
-    }
-
-    @Test
-    @DisplayName("Compra Rápida, com um Pneu + Jogo, entrega Retira, com CUPOM (TONIMEKPASSEIO), pagamento no Nupay")
-    public void GuestRetiraNupayJogoGO10130051MaisPneu16000061CUPOM() throws Exception {
-        homePage.barraDePesquisa("GO101");
-        homePage.barraDePesquisa("30051");
-        homePage.apertarEnter();
-        vitrinePage.clicarNoProduto();
-        itemPage.clickBtnComprar();
-        carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1010");
-        homePage.barraDePesquisa("0079");
-        homePage.apertarEnter();
-        vitrinePage.clicarNoProduto();
-        itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
-        carrinhoPage.clickCalcularCEP();
-        carrinhoPage.fluxoCupom("TONIMEKPASSEIO");
+        carrinhoPage.fluxoCupom(DadosParaTeste.cupom);
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaRetiraNovo2xComEspera();
-        Thread.sleep(2000);
-        entregaPage.ProximoEntregaComEspera();
-        pagamentoPage.pagNupay();
-        pagamentoPage.FinalizaSuaCompraOficial();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
+        pagamentoPage.fluxoPagCartaoCredito();
+        pagamentoPage.FinalizaSuaComprabkp();
+        System.out.println(pagamentoPage.ObterNumeroPedido());
+    }
+
+    @Test
+    @DisplayName("Compra Rápida, com um Pneu + Jogo, entrega Retira, com CUPOM (TONIMEKPASSEIO), pagamento no Nupay")
+    public void GuestRetiraNupayJogoMaisPneuCUPOM() throws Exception {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
+        homePage.apertarEnter();
+        vitrinePage.clicarNoProduto();
+        itemPage.clickBtnComprar();
+        carrinhoPage.continuarComprando();
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
+        homePage.apertarEnter();
+        vitrinePage.clicarNoProduto();
+        itemPage.clickBtnComprar();
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
+        carrinhoPage.clickCalcularCEP();
+        carrinhoPage.fluxoCupom(DadosParaTeste.cupom);
+        carrinhoPage.clickFinalizarCompraComEsperaOficial();
+        loginPage.guest();
+        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.btnProximoEndereco();
+        entregaPage.entregaRetiraNovo2xComEspera();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
+        pagamentoPage.fluxoPagCartaoCredito();
+        pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 

@@ -28,9 +28,9 @@ public class BaseTest {
     public void Inicializa(){
         //DriverFactory.getDriver().get("https://www.pneustore.com.br/");
         //DriverFactory.getDriver().get("https://hml4commerce.eastus.cloudapp.azure.com:1443/");
-        //DriverFactory.getDriver().get("https://preprod.pneustore.com.br/");
-        //DriverFactory.getDriver().get("https://cxpneustore.eastus.cloudapp.azure.com:1443/");
-        //DriverFactory.getDriver().get("https://ps.cmaww4dkcp-cantucome1-s1-public.model-t.cc.commerce.ondemand.com/");
+//        DriverFactory.getDriver().get("https://preprod.pneustore.com.br/");
+//        DriverFactory.getDriver().get("https://cxpneustore.eastus.cloudapp.azure.com:1443/");
+//        DriverFactory.getDriver().get("https://ps.cmaww4dkcp-cantucome1-s1-public.model-t.cc.commerce.ondemand.com/");
         //DriverFactory.getDriver().get("https://www-qas.pneustore.com.br/");
         DriverFactory.getDriver().get("https://www-prd.pneustore.com.br/");
         homePage.clicarConcordo();

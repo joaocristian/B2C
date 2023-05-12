@@ -1,6 +1,7 @@
 package Pages;
 
 import Core.BasePage;
+import Core.BaseTest;
 import Core.DriverFactory;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -20,6 +21,7 @@ public class HomePage extends BasePage {
     WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
     public String menuQualPneuVocePrecisa = "Pneus";
+    public String menuMarcas = "Marcas";
     public String menu_altaPerformance = "Alta Performance";
     public String menu_passeio ="Passeio";
     public String menu_SUV_Caminhonete ="SUV / Caminhonete";
@@ -53,15 +55,15 @@ public class HomePage extends BasePage {
     public String menu_OTRNiveladora = "Niveladora";
     public String menu_OTRPorto  = "Porto";
     public String menu_OTRRoloCompactador = "Rolo Compactador";
-    public String menu_bicicletaGravel = "Gravel";
-    public String menu_bicicletaMTB = "MTB";
-    public String menu_bicicletaSpeed = "Speed";
-    public String menu_bicicletaUrbano = "Urbano";
+    public String menu_bicicleta = "Bicicleta";
     public String menu_agricolaColheitadeira = "Colheitadeira";
     public String menu_agricolaMaquinaCompacta = "Máquina Compacta";
+    public String menu_pneuDeOTR = "Pneu de OTR";
+    public String menu_agricola = "Agricola";
+    public String getMenu_vansEUtilitarios = "Vans e Utilitários";
     public String menu_agricolaPulverizador = "Pulverizador";
     public String menu_agricolaTratores = "Tratores";
-    public String menu_quadricicloPneusParaQuadriciclo = "Pneus Para Quadriciclo";
+    public String menu_quadricicloPneusParaQuadriciclo = "Quadriciclo";
     public String menu_acessorios = "Acessórios";
     public String menu_acessorios_externo = "Acessórios Externo";
     public String menu_acessorios_interno = "Acessórios Interno";
@@ -85,27 +87,47 @@ public class HomePage extends BasePage {
     public String menu_roda_aluminio = "Alumínio";
     public String menu_roda_aco = "Aço";
     public String menu_marcas = "Marcas";
-    public String menu_aosen = "Aosen";
+    public String menu_aeolus = "Aeolus";
     public String menu_Anteo = "Anteo";
     public String menu_AtlasTire = "Atlas Tire";
     public String menu_Barum = "Barum";
     public String menu_BFGoodrich = "BFGoodrich";
+    public String menu_Borilli = "Borilli";
     public String menu_bridgestone = "Bridgestone";
+    public String menu_ceat = "Ceat";
     public String menu_continental = "Continental";
     public String menu_cooper = "Cooper";
     public String menu_DRC = "DRC";
     public String menu_farroad = "Farroad";
     public String menu_firestone = "Firestone";
+    public String menu_formula = "Formula";
     public String menu_generalTire = "General Tire";
     public String menu_goodyear = "Goodyear";
     public String menu_hankook = "Hankook";
+    public String menu_ira = "Ira";
+    public String menu_iris = "Iris";
+    public String menu_itaro = "Itaro";
+    public String menu_JKTyre = "JK Tyre";
+    public String menu_kelly = "Kelly";
+    public String menu_kenda = "Kenda";
+    public String menu_koogar = "Koogar";
     public String menu_kumho = "Kumho";
+    public String menu_maggion = "Maggion";
+    public String menu_maxxis = "Maxxis";
     public String menu_metzeler = "Metzeler";
     public String menu_michelin = "Michelin";
+    public String menu_mitas  = "Mitas";
+    public String menu_nexen  = "Nexen";
     public String menu_pirelli = "Pirelli";
+    public String menu_rinaldi  = "Rinaldi";
+    public String menu_sestante  = "Sestante";
+    public String menu_speedMax  = "SpeedMax";
+    public String menu_steelmark  = "Steelmark";
     public String menu_tegrys = "Tegrys";
     public String menu_tornel = "Tornel";
-    public String menu_todasAsMarcas = "Todas As Marcas";
+    public String menu_vipal  = "Vipal";
+    public String menu_xBri = "XBri";
+
 
     public void clicarNoPneuStore() throws InterruptedException {
         clicarmcomEsperaFixa("/html/body/main/header/div/div[2]/div/a/img");
@@ -117,25 +139,33 @@ public class HomePage extends BasePage {
 
     }
 
-    public void servicosParaCarro(){
-        cliqueBotaoXpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[1]/a");
-    }
-
-    public void servicosParaCarroComEspera(String path){
-        WebDriverWait wait = (new WebDriverWait(getDriver(), Duration.ofSeconds(50)));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(path)));
-        cliqueBotaoXpath(path);
+    public void servicosParaCarro() {
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[3]/a")));
+            clicarLinkLista("Contratar",DriverFactory.url+"servicos-avulsos?vehicleType=auto");
+        } catch (Exception ex) {
+            clicarLinkLista("Contratar",DriverFactory.url+"servicos-avulsos?vehicleType=auto" );
+        }
     }
 
     public void servicosParaMotos(){
-        cliqueBotaoXpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[2]/a");
+        try{
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[3]/a")));
+            clicarLinkLista("Contratar",DriverFactory.url+ "servicos-avulsos?vehicleType=moto");
+        }
+        catch (Exception ex){
+            clicarLinkLista("Contratar",DriverFactory.url+ "servicos-avulsos?vehicleType=moto");
+        }
     }
 
     public void servicosParaTruck(){
-        WebDriverWait wait = (new WebDriverWait(getDriver(), Duration.ofSeconds(50)));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[3]/a")));
-        cliqueBotaoXpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[3]/a");
-
+        try{
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"servicosHomeHome\"]/div/div/div[2]/div[3]/a")));
+            clicarLinkLista("Contratar",DriverFactory.url+ "servicos-avulsos?vehicleType=truck");
+        }
+        catch (Exception ex){
+            clicarLinkLista("Contratar",DriverFactory.url+ "servicos-avulsos?vehicleType=truck");
+        }
     }
 
     public void apertarEnter() throws InterruptedException {
@@ -288,7 +318,7 @@ public class HomePage extends BasePage {
     //Busca Por Categoria -  Inicio//
     public void carroAltaPerformance(){
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_altaPerformance);
+        clicarLinkComEspera(menu_altaPerformance);
         vitrinePage.conferirTitulo2("Alta Performance");
         vitrinePage.clicarNaPneuStore();
     }
@@ -308,42 +338,42 @@ public class HomePage extends BasePage {
     }
 
     public void originaisDeFacricaChevrolet() {
-        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        pausarMouseNoMenuLink(menuMarcas);
         clicarLink(menu_chevrolet);
         vitrinePage.conferirTitulo2("Chevrolet");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void originaisDeFacricaFiat() {
-        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        pausarMouseNoMenuLink(menuMarcas);
         clicarLink(menu_fiat);
         vitrinePage.conferirTitulo2("Fiat");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void originaisDeFacricaFord() {
-        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        pausarMouseNoMenuLink(menuMarcas);
         clicarLink(menu_ford);
         vitrinePage.conferirTitulo2("Ford");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void originaisDeFacricaRenault() {
-        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        pausarMouseNoMenuLink(menuMarcas);
         clicarLink(menu_renault);
         vitrinePage.conferirTitulo2("Renault");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void originaisDeFacricaVolkswagen() {
-        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        pausarMouseNoMenuLink(menuMarcas);
         clicarLink(menu_volkswagen);
         vitrinePage.conferirTitulo2("Volkswagen");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void originaisDeFacricaToyota() {
-        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        pausarMouseNoMenuLink(menuMarcas);
         clicarLink(menu_toyota);
         vitrinePage.conferirTitulo2("Toyota");
         vitrinePage.clicarNaPneuStore();
@@ -351,14 +381,14 @@ public class HomePage extends BasePage {
 
     public void MotoCustom() {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_custom);
+        clicarLinkComEspera(menu_custom);
         vitrinePage.conferirTitulo2("Custom");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void MotoOffRoad() {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_off_road);
+        clicarLinkComEspera(menu_off_road);
         vitrinePage.conferirTitulo2("Off Road");
         vitrinePage.clicarNaPneuStore();
     }
@@ -393,7 +423,7 @@ public class HomePage extends BasePage {
 
     public void CaminhoesEOnibusForadeEstrada() {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_caminhoesEOnibusForadeEstrada);
+        clicarLinkComEspera(menu_caminhoesEOnibusForadeEstrada);
         vitrinePage.conferirTitulo2("Fora de Estrada");
         vitrinePage.clicarNaPneuStore();
     }
@@ -426,45 +456,45 @@ public class HomePage extends BasePage {
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void VansEUtilitariosAro12() {
+    public void VansEUtilitariosAro12() throws InterruptedException {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_vansEUtilitariosAro12);
-        vitrinePage.conferirTitulo2("Aro 12");
+        clicarLinkComEspera(menu_vansEUtilitariosAro12);
+        vitrinePage.conferirTitulo4("Aro 12");
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void VansEUtilitariosAro13() {
+    public void VansEUtilitariosAro13() throws InterruptedException {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_vansEUtilitariosAro13);
-        vitrinePage.conferirTitulo2("Aro 13");
+        clicarLinkComEspera(menu_vansEUtilitariosAro13);
+        vitrinePage.conferirTitulo4("Aro 13");
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void VansEUtilitariosAro14() {
+    public void VansEUtilitariosAro14() throws InterruptedException {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_vansEUtilitariosAro14);
-        vitrinePage.conferirTitulo2("Aro 14");
+        clicarLinkComEspera(menu_vansEUtilitariosAro14);
+        vitrinePage.conferirTitulo4("Aro 14");
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void VansEUtilitariosAro15() {
+    public void VansEUtilitariosAro15() throws InterruptedException {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_vansEUtilitariosAro15);
-        vitrinePage.conferirTitulo2("Aro 15");
+        clicarLinkComEspera(menu_vansEUtilitariosAro15);
+        vitrinePage.conferirTitulo4("Aro 15");
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void VansEUtilitariosAro16() {
+    public void VansEUtilitariosAro16() throws InterruptedException {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_vansEUtilitariosAro16);
-        vitrinePage.conferirTitulo2("Aro 16");
+        clicarLinkComEspera(menu_vansEUtilitariosAro16);
+        vitrinePage.conferirTitulo4("Aro 16");
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void OTRCaminhaoArticulado() {
+    public void OTRCaminhaoArticulado() throws InterruptedException {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_OTRCaminhaoArticulado);
-        vitrinePage.conferirTitulo2("Caminhão Articulado");
+        clicarLinkComEspera(menu_OTRCaminhaoArticulado);
+        vitrinePage.conferirTitulo4("Caminhão Articulado");
         vitrinePage.clicarNaPneuStore();
     }
 
@@ -510,7 +540,7 @@ public class HomePage extends BasePage {
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void BicicletaGravel() {
+/*    public void BicicletaGravel() {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
         clicarLink(menu_bicicletaGravel);
         vitrinePage.conferirTitulo2("Gravel");
@@ -535,6 +565,13 @@ public class HomePage extends BasePage {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
         clicarLink(menu_bicicletaUrbano);
         vitrinePage.conferirTitulo2("Urbano");
+        vitrinePage.clicarNaPneuStore();
+    }
+*/
+    public void Bicicleta() throws InterruptedException {
+        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        clicarLinkComEspera(menu_bicicleta);
+        vitrinePage.conferirTitulo3("Pneus de Bicicleta");
         vitrinePage.clicarNaPneuStore();
     }
 
@@ -566,10 +603,10 @@ public class HomePage extends BasePage {
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void QuadricicloPneusParaQuadriciclo() {
+    public void QuadricicloPneusParaQuadriciclo() throws InterruptedException {
         pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
-        clicarLink(menu_quadricicloPneusParaQuadriciclo);
-        vitrinePage.conferirTitulo2("Pneus Para Quadriciclo");
+        clicarLinkComEspera(menu_quadricicloPneusParaQuadriciclo);
+        vitrinePage.conferirTitulo3("Pneus de Quadriciclo");
         vitrinePage.clicarNaPneuStore();
     }
 
@@ -652,7 +689,7 @@ public class HomePage extends BasePage {
 
     public void rodasEsportivasAro15() throws InterruptedException {
         pausarMouseNoMenuLink(menu_rodas);
-        clicarLink(menu_aro15);
+        clicarLinkComEspera(menu_aro15);
         vitrinePage.conferirTitulo("Aro 15");
         vitrinePage.clicarNaPneuStore();
     }
@@ -687,7 +724,7 @@ public class HomePage extends BasePage {
 
     public void rodasEsportivasAro22() throws InterruptedException {
         pausarMouseNoMenuLink(menu_rodas);
-        clicarLink(menu_aro22);
+        clicarLinkComEspera(menu_aro22);
         vitrinePage.conferirTitulo("Aro 22");
         vitrinePage.clicarNaPneuStore();
     }
@@ -708,56 +745,70 @@ public class HomePage extends BasePage {
 
     public void marcasPrincipaisMarcasAosen() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_aosen);
-        vitrinePage.conferirTitulo("Pneus Aosen");
+        clicarLink(menu_aeolus);
+        vitrinePage.conferirTitulo("Aeolus");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void marcasPrincipaisMarcasAnteo() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_Anteo);
-        vitrinePage.conferirTitulo("Anteo");
+        clicarLinkComEspera(menu_Anteo);
+        vitrinePage.conferirTitulo4("Anteo");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void marcasPrincipaisMarcasAtlasTire() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_AtlasTire);
-        vitrinePage.conferirTitulo("Atlas Tire");
+        clicarLinkComEspera(menu_AtlasTire);
+        vitrinePage.conferirTitulo4("Atlas");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void marcasPrincipaisMarcasBarum() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_Barum);
-        vitrinePage.conferirTitulo("Barum");
+        clicarLinkComEspera(menu_Barum);
+        vitrinePage.conferirTitulo4("Barum");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void marcasPrincipaisMarcasBFGoodrich() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_BFGoodrich);
+        clicarLinkComEspera(menu_BFGoodrich);
         vitrinePage.conferirTitulo("Pneus BFGoodrich");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasBorilli() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLinkComEspera(menu_Borilli);
+        vitrinePage.conferirTitulo("Borilli");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void marcasPrincipaisMarcasBridgestone() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_bridgestone);
+        clicarLinkComEspera(menu_bridgestone);
         vitrinePage.conferirTitulo("Pneus Bridgestone");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasCeat() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_ceat);
+        vitrinePage.conferirTitulo("Ceat");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void marcasPrincipaisMarcasContinental() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_continental);
-        vitrinePage.conferirTitulo("Pneus Continental");
+        clicarLinkComEspera(menu_continental);
+        vitrinePage.conferirTitulo4("Pneus Continental");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void marcasPrincipaisMarcasCooper() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_cooper);
+        clicarLinkComEspera(menu_cooper);
         vitrinePage.conferirTitulo("Pneus Cooper");
         vitrinePage.clicarNaPneuStore();
     }
@@ -771,7 +822,7 @@ public class HomePage extends BasePage {
 
     public void marcasPrincipaisMarcasFarroad() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_farroad);
+        clicarLinkComEspera(menu_farroad);
         vitrinePage.conferirTitulo("Pneus Farroad");
         vitrinePage.clicarNaPneuStore();
     }
@@ -783,10 +834,17 @@ public class HomePage extends BasePage {
         vitrinePage.clicarNaPneuStore();
     }
 
+    public void marcasPrincipaisMarcasFormula() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_formula);
+        vitrinePage.conferirTitulo("Formula");
+        vitrinePage.clicarNaPneuStore();
+    }
+
     public void marcasPrincipaisMarcasGeneralTire() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
         clicarLink(menu_generalTire);
-        vitrinePage.conferirTitulo("Pneus General Tire");
+        vitrinePage.conferirTitulo4("Pneus General Tire");
         vitrinePage.clicarNaPneuStore();
     }
 
@@ -799,41 +857,141 @@ public class HomePage extends BasePage {
 
     public void marcasPrincipaisMarcasHankook() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_hankook);
-        vitrinePage.conferirTitulo("Pneus Hankook");
+        clicarLinkComEspera(menu_hankook);
+        vitrinePage.conferirTitulo4("Pneus Hankook");
         vitrinePage.clicarNaPneuStore();
     }
 
+    public void marcasPrincipaisMarcasIra() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLinkComEspera(menu_ira);
+        vitrinePage.conferirTitulo4("Ira");
+        vitrinePage.clicarNaPneuStore();
+    }
+    public void marcasPrincipaisMarcasIris() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_iris);
+        vitrinePage.conferirTitulo4("Iris");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasItaro() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_itaro);
+        vitrinePage.conferirTitulo4("Pneus Itaro");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasJKTyre() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_JKTyre);
+        vitrinePage.conferirTitulo4("Jk Tyre");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasKelly() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_kelly);
+        vitrinePage.conferirTitulo4("Kelly");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasKenda() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_kenda);
+        vitrinePage.conferirTitulo4("Kenda");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasKoogar() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_koogar);
+        vitrinePage.conferirTitulo4("Koogar");
+        vitrinePage.clicarNaPneuStore();
+    }
     public void marcasPrincipaisMarcasKumho() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
         clicarLink(menu_kumho);
-        vitrinePage.conferirTitulo("Pneus Kumho");
+        vitrinePage.conferirTitulo4("Pneus Kumho");
         vitrinePage.clicarNaPneuStore();
     }
 
+    public void marcasPrincipaisMarcasMaggion() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_maggion);
+        vitrinePage.conferirTitulo4("Maggion");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasMaxxis() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_maxxis);
+        vitrinePage.conferirTitulo4("Maxxis");
+        vitrinePage.clicarNaPneuStore();
+    }
     public void marcasPrincipaisMarcasMetzeler() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
         clicarLink(menu_metzeler);
-        vitrinePage.conferirTitulo("Pneus Metzeler");
+        vitrinePage.conferirTitulo4("Pneus Metzeler");
         vitrinePage.clicarNaPneuStore();
     }
 
     public void marcasPrincipaisMarcasMichelin() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
         clicarLink(menu_michelin);
-        vitrinePage.conferirTitulo("Pneus Michelin");
+        vitrinePage.conferirTitulo4("Pneus Michelin");
         vitrinePage.clicarNaPneuStore();
     }
 
 
+    public void marcasPrincipaisMarcasMitas() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLinkComEspera(menu_mitas);
+        vitrinePage.conferirTitulo4("Mitas");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasNexen() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLinkComEspera(menu_nexen);
+        vitrinePage.conferirTitulo4("Nexen");
+        vitrinePage.clicarNaPneuStore();
+    }
     public void marcasPrincipaisMarcasPirelli() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_pirelli);
-        vitrinePage.conferirTitulo("Pneus Pirelli");
+        clicarLinkComEspera(menu_pirelli);
+        vitrinePage.conferirTitulo4("Pneus Pirelli");
         vitrinePage.clicarNaPneuStore();
     }
 
+    public void marcasPrincipaisMarcasRinaldi() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_rinaldi);
+        vitrinePage.conferirTitulo4("Rinaldi");
+        vitrinePage.clicarNaPneuStore();
+    }
 
+    public void marcasPrincipaisMarcasSestante() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_sestante);
+        vitrinePage.conferirTitulo4("Sestante");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasSpeedMax() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        Thread.sleep(1000);
+        clicarLink(menu_speedMax);
+        vitrinePage.conferirTitulo4("Speedmax");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void marcasPrincipaisMarcasSteelmark() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_steelmark);
+        vitrinePage.conferirTitulo("Steelmark");
+        vitrinePage.clicarNaPneuStore();
+    }
     public void marcasPrincipaisMarcasTegrys() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
         clicarLink(menu_tegrys);
@@ -847,15 +1005,20 @@ public class HomePage extends BasePage {
         vitrinePage.conferirTitulo("Pneus Tornel");
         vitrinePage.clicarNaPneuStore();
     }
-
-    public void marcasPrincipaisMarcasTodasAsMarcas() throws InterruptedException {
+    public void marcasPrincipaisMarcasVipal() throws InterruptedException {
         pausarMouseNoMenuLink(menu_marcas);
-        clicarLink(menu_todasAsMarcas);
-        vitrinePage.conferirTitulo("Todas As Marcas");
+        clicarLink(menu_vipal);
+        vitrinePage.conferirTitulo("Vipal");
         vitrinePage.clicarNaPneuStore();
     }
 
-    public void getstorefeedshopbackl() {
+    public void marcasPrincipaisMarcasXBri() throws InterruptedException {
+        pausarMouseNoMenuLink(menu_marcas);
+        clicarLink(menu_xBri);
+        vitrinePage.conferirTitulo("Xbri");
+        vitrinePage.clicarNaPneuStore();
+    }
+   public void getstorefeedshopbackl() {
         WebDriver driver = null;
         driver = new ChromeDriver();
         driver.get(driverFactory.url+"/get-store-feed/shopback");
@@ -1140,7 +1303,14 @@ public class HomePage extends BasePage {
         clicarNoPneuStore();
         Thread.sleep(2000);
     }
-
+    public void carrosL165P40R18() throws InterruptedException {
+        buscarPorMedidaLargura("165");
+        buscarPorMedidaPerfil("40");
+        buscarPorMedidaAro("18");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+        Thread.sleep(2000);
+    }
     public void carrosL165P45R15() throws InterruptedException {
         buscarPorMedidaLargura("165");
         buscarPorMedidaPerfil("45");
@@ -1250,7 +1420,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL175P55R20() throws InterruptedException {
+        buscarPorMedidaLargura("175");
+        buscarPorMedidaPerfil("55");
+        buscarPorMedidaAro("20");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL175P60R13() throws InterruptedException {
         buscarPorMedidaLargura("175");
         buscarPorMedidaPerfil("60");
@@ -1263,6 +1439,13 @@ public class HomePage extends BasePage {
         buscarPorMedidaLargura("175");
         buscarPorMedidaPerfil("60");
         buscarPorMedidaAro("15");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
+    public void carrosL175P60R19() throws InterruptedException {
+        buscarPorMedidaLargura("175");
+        buscarPorMedidaPerfil("60");
+        buscarPorMedidaAro("19");
         btnBuscaMedida();
         clicarNoPneuStore();
     }
@@ -1298,7 +1481,21 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
+    public void carrosL175P75R13() throws InterruptedException {
+        buscarPorMedidaLargura("175");
+        buscarPorMedidaPerfil("75");
+        buscarPorMedidaAro("13");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
 
+    public void carrosL175P75R14() throws InterruptedException {
+        buscarPorMedidaLargura("175");
+        buscarPorMedidaPerfil("75");
+        buscarPorMedidaAro("14");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL175P80R14() throws InterruptedException {
         buscarPorMedidaLargura("175");
         buscarPorMedidaPerfil("80");
@@ -1306,7 +1503,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL175P80R19() throws InterruptedException {
+        buscarPorMedidaLargura("175");
+        buscarPorMedidaPerfil("80");
+        buscarPorMedidaAro("19");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL175P90R14() throws InterruptedException {
         buscarPorMedidaLargura("175");
         buscarPorMedidaPerfil("90");
@@ -1499,7 +1702,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL195P45R17() throws InterruptedException {
+        buscarPorMedidaLargura("195");
+        buscarPorMedidaPerfil("45");
+        buscarPorMedidaAro("17");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL195P50R15() throws InterruptedException {
         buscarPorMedidaLargura("195");
         buscarPorMedidaPerfil("50");
@@ -1620,7 +1829,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL195PsR18() throws InterruptedException {
+        buscarPorMedidaLargura("195");
+        buscarPorMedidaPerfil("--");
+        buscarPorMedidaAro("18");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL215P30R20() throws InterruptedException {
         buscarPorMedidaLargura("215");
         buscarPorMedidaPerfil("30");
@@ -1756,6 +1971,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
+    public void carrosL215P65R17() throws InterruptedException {
+        buscarPorMedidaLargura("215");
+        buscarPorMedidaPerfil("65");
+        buscarPorMedidaAro("17");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
 
     public void carrosL215P70R14() throws InterruptedException {
         buscarPorMedidaLargura("215");
@@ -1787,7 +2009,20 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL215P75R16() throws InterruptedException {
+        buscarPorMedidaLargura("215");
+        buscarPorMedidaPerfil("75");
+        buscarPorMedidaAro("16");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
+    public void carrosL215P80R15() throws InterruptedException {
+        buscarPorMedidaLargura("215");
+        buscarPorMedidaPerfil("80");
+        buscarPorMedidaAro("15");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL215P80R16() throws InterruptedException {
         buscarPorMedidaLargura("215");
         buscarPorMedidaPerfil("80");
@@ -1795,7 +2030,14 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL215P85R15() throws InterruptedException {
+        buscarPorMedidaLargura("215");
+        buscarPorMedidaPerfil("85");
+        buscarPorMedidaAro("15");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+        Thread.sleep(2000);
+    }
     public void carrosL215P85R16() throws InterruptedException {
         buscarPorMedidaLargura("215");
         buscarPorMedidaPerfil("85");
@@ -1804,7 +2046,13 @@ public class HomePage extends BasePage {
         clicarNoPneuStore();
         Thread.sleep(2000);
     }
-
+    public void carrosL215PsR14() throws InterruptedException {
+        buscarPorMedidaLargura("215");
+        buscarPorMedidaPerfil("--");
+        buscarPorMedidaAro("14");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL215PsR15() throws InterruptedException {
         buscarPorMedidaLargura("215");
         buscarPorMedidaPerfil("--");
@@ -1997,7 +2245,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL205P70R16() throws InterruptedException {
+        buscarPorMedidaLargura("205");
+        buscarPorMedidaPerfil("70");
+        buscarPorMedidaAro("16");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL205P75R15() throws InterruptedException {
         buscarPorMedidaLargura("205");
         buscarPorMedidaPerfil("75");
@@ -2093,7 +2347,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL225P40R20() throws InterruptedException {
+        buscarPorMedidaLargura("225");
+        buscarPorMedidaPerfil("40");
+        buscarPorMedidaAro("20");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL225P45R17() throws InterruptedException {
         buscarPorMedidaLargura("225");
         buscarPorMedidaPerfil("45");
@@ -2221,7 +2481,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL225P70R14() throws InterruptedException {
+        buscarPorMedidaLargura("225");
+        buscarPorMedidaPerfil("70");
+        buscarPorMedidaAro("14");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL225P70R15() throws InterruptedException {
         buscarPorMedidaLargura("225");
         buscarPorMedidaPerfil("70");
@@ -2237,7 +2503,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL225P70R17() throws InterruptedException {
+        buscarPorMedidaLargura("225");
+        buscarPorMedidaPerfil("70");
+        buscarPorMedidaAro("17");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL225P75R15() throws InterruptedException {
         buscarPorMedidaLargura("225");
         buscarPorMedidaPerfil("75");
@@ -2253,17 +2525,28 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
+    public void carrosL225PsR14() throws InterruptedException {
 
+        buscarPorMedidaLargura("225");
+        buscarPorMedidaPerfil("--");
+        buscarPorMedidaAro("14");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL225PsR15() throws InterruptedException {
+        buscarPorMedidaLargura("225");
+        buscarPorMedidaPerfil("--");
+        buscarPorMedidaAro("15");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
 
+    public void carrosL225PsR16() throws InterruptedException {
         buscarPorMedidaLargura("225");
         buscarPorMedidaPerfil("--");
         buscarPorMedidaAro("16");
         btnBuscaMedida();
         clicarNoPneuStore();
-    }
-
-    public void carrosL225PsR16() {
     }
 
     public void carrosL225PsR17() throws InterruptedException {
@@ -2370,7 +2653,6 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
     public void carrosL1250P35R20() throws InterruptedException {
         buscarPorMedidaLargura("12.50");
         buscarPorMedidaPerfil("35");
@@ -2378,7 +2660,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL1250P35R22() throws InterruptedException {
+        buscarPorMedidaLargura("12.50");
+        buscarPorMedidaPerfil("35");
+        buscarPorMedidaAro("22");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL1250P37R17() throws InterruptedException {
         buscarPorMedidaLargura("12.50");
         buscarPorMedidaPerfil("37");
@@ -2410,7 +2698,13 @@ public class HomePage extends BasePage {
         btnBuscaMedida();
         clicarNoPneuStore();
     }
-
+    public void carrosL175PsR20() throws InterruptedException {
+        buscarPorMedidaLargura("175");
+        buscarPorMedidaPerfil("--");
+        buscarPorMedidaAro("20");
+        btnBuscaMedida();
+        clicarNoPneuStore();
+    }
     public void carrosL185P75R14() throws InterruptedException {
         buscarPorMedidaLargura("185");
         buscarPorMedidaPerfil("75");
@@ -2517,5 +2811,26 @@ public class HomePage extends BasePage {
         buscarPorMedidaAro("16");
         btnBuscaMedida();
         clicarNoPneuStore();
+    }
+
+    public void PneuDeOTR() throws InterruptedException {
+        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        clicarLinkComEspera(menu_pneuDeOTR);
+        vitrinePage.conferirTitulo3("Pneus de OTR");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void Agricola() throws InterruptedException {
+        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        clicarLinkComEspera(menu_agricola);
+        vitrinePage.conferirTitulo4("Pneus Agrícolas");
+        vitrinePage.clicarNaPneuStore();
+    }
+
+    public void VansEUtilitarios() throws InterruptedException {
+        pausarMouseNoMenuLink(menuQualPneuVocePrecisa);
+        clicarLinkComEspera(getMenu_vansEUtilitarios);
+        vitrinePage.conferirTitulo3("Pneus de Vans e Utilitários");
+        vitrinePage.clicarNaPneuStore();
     }
 }

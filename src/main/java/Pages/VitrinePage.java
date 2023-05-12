@@ -15,8 +15,9 @@ public class VitrinePage extends BasePage {
     WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
     String tituloCategoria = "category-title";
     String tituloCategoria1 = "/html/body/main/div[4]/div[2]/div/div/div[2]/h1";
-
     String tituloCategoria2 = "/html/body/main/div[2]/ol/li[4]/span";
+     String tituloCategoria3 = "//*[@id=\"CategoryHeaderComponent\"]/div[1]/div/h1";
+
 
 
 
@@ -143,6 +144,16 @@ public class VitrinePage extends BasePage {
         Assert.assertEquals(titulo,obterTextoComPathEspera(tituloCategoria));
     }
 
+    public void conferirTitulo3(String titulo) throws InterruptedException {
+        Assert.assertEquals(titulo,obterTextoComPathEspera1(tituloCategoria3));
+
+    }
+
+    public void conferirTitulo4(String titulo) throws InterruptedException {
+        Assert.assertEquals(titulo,obterTextoComPathEspera1(tituloCategoria1));
+
+    }
+
     public void conferirTitulo2(String titulo){
         Assert.assertEquals(titulo,obterTextoComPathEspera(tituloCategoria2));
     }
@@ -171,7 +182,8 @@ public class VitrinePage extends BasePage {
         cliqueBotaoCSS("#btn-add-16000060 > span");
     }
 
-    public void clicarNoProduto() {
+    public void clicarNoProduto() throws InterruptedException {
+        Thread.sleep(2000);
         cliqueBotaoXpath("/html/body/main/div[4]/div[1]/div/div/div/div[2]/ul/div/div[1]/div[2]/a");
     }
 

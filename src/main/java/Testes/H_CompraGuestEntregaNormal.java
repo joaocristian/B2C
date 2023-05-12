@@ -2,8 +2,8 @@ package Testes;
 
 import Core.BasePage;
 import Core.BaseTest;
+import Dados.DadosParaTeste;
 import Pages.*;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
@@ -18,297 +18,344 @@ public class H_CompraGuestEntregaNormal extends BaseTest {
     PagamentoPage pagamentoPage = new PagamentoPage();
     ItemPage itemPage = new ItemPage();
     BasePage basePage = new BasePage();
+    
 
-    String pneu = "10120084";
-    String jogo = "IT16001186";
-    String cep = "04547004";
-
-
-    //COM 1 PNEU
+//COM 1 PNEU
     @Test
     @Order(1)
     @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Boleto")
     public void GuestNormalBoletoPneu() throws InterruptedException {
-        homePage.barraDePesquisa(pneu);
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
-        //Thread.sleep(1000);
+        Thread.sleep(4000);
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco(cep);
-        enderecoPage.btnProximoEndereco();
-        //Thread.sleep(1000);
-        entregaPage.entregaNormal();
-        //Thread.sleep(6000);
-        entregaPage.btnProximoEntrega();
-        //Thread.sleep(6000);
-        pagamentoPage.PagBoletoComEspera();
-        pagamentoPage.FinalizaSuaComprabkp();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+        enderecoPage.proximoEndereco();
+        Thread.sleep(7000);
+        entregaPage.entregaNormalCX();
+        Thread.sleep(6000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(6000);
+        pagamentoPage.boleto();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
-
     @Test
     @Order(2)
     @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Pix")
     public void GuestNormalPixPneu() throws InterruptedException {
-        homePage.barraDePesquisa(pneu);
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco(cep);
-        enderecoPage.btnProximoEndereco();
-        Thread.sleep(1000);
-        entregaPage.entregaNormal();
-        Thread.sleep(5000);
-        entregaPage.btnProximoEntrega();
-        Thread.sleep(5000);
-        pagamentoPage.PagPix();
-        pagamentoPage.FinalizaSuaComprabkp();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+        enderecoPage.proximoEndereco();
+        Thread.sleep(6000);
+        entregaPage.entregaNormalCX();
+        Thread.sleep(6000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(6000);
+        pagamentoPage.pixWait();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
-
     @Test
     @Order(3)
     @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Cartão de Crédito")
     public void GuestNormalCCPneu() throws InterruptedException {
-        homePage.barraDePesquisa(pneu);
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.clickFinalizarCompra();
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
+        carrinhoPage.clickCalcularCEP();
+        carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco(cep);
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        Thread.sleep(1000);
-        entregaPage.entregaNormal();
+        Thread.sleep(6000);
+        entregaPage.entregaNormalCX();
         Thread.sleep(5000);
-        entregaPage.btnProximoEntrega();
-        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(6000);
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
+//    @Test
+//    @Order(4)
+//    @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Nupay")
+//    public void GuestExpressoNupayPneu() throws InterruptedException {
+//        homePage.barraDePesquisa(DadosParaTeste.pneu);
+//        homePage.apertarEnter();
+//        vitrinePage.clicarNoProduto();
+//        itemPage.clickBtnComprar();
+//        carrinhoPage.clickFinalizarCompra();
+//        loginPage.guest();
+//        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+//        enderecoPage.btnProximoEndereco();
+//        Thread.sleep(1000);
+//        entregaPage.entregaNormal();
+//        Thread.sleep(5000);
+//        entregaPage.proximoEntregaWait();
+//        Thread.sleep(5000);
+//        pagamentoPage.pagNupay();
+//        pagamentoPage.FinalizaSuaComprabkp();
+//        System.out.println(pagamentoPage.ObterNumeroPedido());
+//    }
 
-    @Test
-    @Order(4)
-    @DisplayName("Compra Rápida, com um pneu, entrega normal, pagamento no Nupay")
-    public void GuestExpressoNupayPneu() throws InterruptedException {
-        homePage.barraDePesquisa(pneu);
-        homePage.apertarEnter();
-        vitrinePage.clicarNoProduto();
-        itemPage.clickBtnComprar();
-        carrinhoPage.clickFinalizarCompra();
-        loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco(cep);
-        enderecoPage.btnProximoEndereco();
-        Thread.sleep(1000);
-        entregaPage.entregaNormal();
-        Thread.sleep(5000);
-        entregaPage.btnProximoEntrega();
-        Thread.sleep(5000);
-        pagamentoPage.pagNupay();
-        pagamentoPage.FinalizaSuaComprabkp();
-        System.out.println(pagamentoPage.ObterNumeroPedido());
-    }
-
-
-
-    //COM 1 JOGO
+//COM 1 JOGO
     @Test
     @Order(5)
     @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Pix")
     public void GuestNormalPixJogo() throws InterruptedException {
-        homePage.barraDePesquisa(jogo);
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco(cep);
-        enderecoPage.btnProximoEndereco();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+        enderecoPage.proximoEndereco();
+        Thread.sleep(6000);
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
-        pagamentoPage.FinalizaSuaComprabkp();
+        Thread.sleep(6000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(6000);
+        pagamentoPage.pixWait();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
-
     @Test
     @Order(6)
     @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Boleto")
     public void GuestNormalBoletoJogo() throws InterruptedException {
-        homePage.barraDePesquisa(jogo);
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.clickFinalizarCompra();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco(cep);
-        enderecoPage.btnProximoEndereco();
-        Thread.sleep(1000);
-        entregaPage.entregaNormal();
-        Thread.sleep(5000);
-        entregaPage.btnProximoEntrega();
-        Thread.sleep(5000);
-        pagamentoPage.PagBoletoComEspera();
-        pagamentoPage.FinalizaSuaComprabkp();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+        enderecoPage.proximoEndereco();
+        Thread.sleep(6000);
+        entregaPage.entregaNormalCX();
+        Thread.sleep(6000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(6000);
+        pagamentoPage.boletoComEspera();
+        pagamentoPage.finalizaSuaCompra();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 
+    @Test
+    @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Boleto, com Cupom TONIMEKPASSEIO")
+    public void GuestNormalBoletoJogoComCupom() throws InterruptedException {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
+        homePage.apertarEnter();
+        vitrinePage.clicarNoProduto();
+        itemPage.clickBtnComprar();
+        carrinhoPage.fluxoCupom(DadosParaTeste.cupom);
+        carrinhoPage.clickFinalizarCompra();
+        loginPage.guest();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+        enderecoPage.proximoEndereco();
+        Thread.sleep(6000);
+        entregaPage.entregaNormalCX();
+        Thread.sleep(6000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(6000);
+        pagamentoPage.boletoComEspera();
+        pagamentoPage.finalizaSuaCompra();
+        System.out.println(pagamentoPage.ObterNumeroPedido());
+    }
     @Test
     @Order(7)
     @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Cartão de crédito")
     public void GuestNormalCCJogo() throws InterruptedException {
-        homePage.barraDePesquisa(jogo);
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep(cep);
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
         carrinhoPage.clickCalcularCEP();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        entregaPage.entregaNormal();
-        entregaPage.btnProximoEntrega();
+        Thread.sleep(6000);
+        entregaPage.entregaNormalCX();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(6000);
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
+//    @Test
+//    @Order(8)
+//    @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Nupay")
+//    public void GuestNormalNupayJogo() throws InterruptedException {
+//        homePage.barraDePesquisa(DadosParaTeste.jogo);
+//        homePage.apertarEnter();
+//        vitrinePage.clicarNoProduto();
+//        itemPage.clickBtnComprar();
+//        carrinhoPage.clickFinalizarCompra();
+//        loginPage.guest();
+//        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+//        enderecoPage.btnProximoEndereco();
+//        Thread.sleep(1000);
+//        entregaPage.entregaNormal();
+//        Thread.sleep(5000);
+//        entregaPage.proximoEntregaWait();
+//        Thread.sleep(5000);
+//        pagamentoPage.pagNupay();
+//        pagamentoPage.FinalizaSuaComprabkp();
+//        System.out.println(pagamentoPage.ObterNumeroPedido());
+//    }
 
-    @Test
-    @Order(8)
-    @DisplayName("Compra Rápida, com um Jogo de pneus, entrega normal, pagamento no Nupay")
-    public void GuestNormalNupayJogo() throws InterruptedException {
-        homePage.barraDePesquisa(jogo);
-        homePage.apertarEnter();
-        vitrinePage.clicarNoProduto();
-        itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep(cep);
-        carrinhoPage.clickCalcularCEP();
-        carrinhoPage.clickFinalizarCompraComEsperaOficial();
-        loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
-        enderecoPage.btnProximoEndereco();
-        Thread.sleep(1000);
-        entregaPage.entregaNormal();
-        Thread.sleep(5000);
-        entregaPage.btnProximoEntrega();
-        Thread.sleep(5000);
-        pagamentoPage.PagNupay();
-        pagamentoPage.FinalizaSuaComprabkp();
-        System.out.println(pagamentoPage.ObterNumeroPedido());
-    }
-
-    //COM 1 PNEU E 1 JOGO
+//COM 1 PNEU E 1 JOGO
     @Test
     @Order(9)
     @DisplayName("Compra Rápida, com um Pneu + Jogo de pneus, entrega normal, pagamento no Pix")
     public void GuestNormalPixJogoMaisPneu() throws InterruptedException {
-        homePage.barraDePesquisa(jogo);
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa(pneu);
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep(cep);
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
         carrinhoPage.clickCalcularCEP();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
+        Thread.sleep(6000);
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(5000);
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
-
     @Test
     @Order(10)
     @DisplayName("Compra Rápida, com um Pneu + Jogo de pneus, entrega normal, pagamento no Boleto")
     public void GuestNormalBoletoJogoMaisPneu() throws InterruptedException {
-        homePage.barraDePesquisa(jogo);
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa(pneu);
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep(cep);
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
         carrinhoPage.clickCalcularCEP();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco(cep);
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
-        Thread.sleep(1000);
+        Thread.sleep(6000);
         entregaPage.entregaNormalCX();
         Thread.sleep(5000);
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         Thread.sleep(5000);
-        pagamentoPage.PagBoletoComEspera();
+        pagamentoPage.boletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
     @Test
     @DisplayName("Compra Rápida, com um Pneu + Jogo de pneus, entrega normal, pagamento no Cartão de crédito")
-    public void GuestNormalCCJogoIT16001186MaisPneu10070194SPLIT() throws InterruptedException {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
+    public void GuestNormalCCJogoITMaisPneuSPLIT() throws InterruptedException {
+        homePage.barraDePesquisa(DadosParaTeste.jogo);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
         carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
+        homePage.barraDePesquisa(DadosParaTeste.pneu);
         homePage.apertarEnter();
         vitrinePage.clicarNoProduto();
         itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
+        carrinhoPage.escreverCep(DadosParaTeste.cep);
         carrinhoPage.clickCalcularCEP();
         carrinhoPage.clickFinalizarCompraComEsperaOficial();
         loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
+        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
         enderecoPage.btnProximoEndereco();
+        Thread.sleep(7000);
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
+        Thread.sleep(5000);
+        entregaPage.proximoEntregaWait();
+        Thread.sleep(6000);
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
-
-    @Test
-    @DisplayName("Compra Rápida, com um Pneu + Jogo de pneus, entrega normal, pagamento no Nupay")
-    public void GuestNormalNupayJogoIT16001186MaisPneu10070194SPLIT() throws InterruptedException {
-        homePage.barraDePesquisa("IT1600");
-        homePage.barraDePesquisa("1186");
-        homePage.apertarEnter();
-        vitrinePage.clicarNoProduto();
-        itemPage.clickBtnComprar();
-        carrinhoPage.continuarComprando();
-        homePage.barraDePesquisa("1007");
-        homePage.barraDePesquisa("0194");
-        homePage.apertarEnter();
-        vitrinePage.clicarNoProduto();
-        itemPage.clickBtnComprar();
-        carrinhoPage.escreverCep("04547004");
-        carrinhoPage.clickCalcularCEP();
-        carrinhoPage.clickFinalizarCompraComEsperaOficial();
-        loginPage.guest();
-        enderecoPage.escreverDadosDoEndereco04547004();
-        enderecoPage.btnProximoEndereco();
-        entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.pagNupay();
-        pagamentoPage.FinalizaSuaComprabkp();
-        System.out.println(pagamentoPage.ObterNumeroPedido());
+//    @Test
+//    @DisplayName("Compra Rápida, com um Pneu + Jogo de pneus, entrega normal, pagamento no Nupay")
+//    public void GuestNormalNupayJogoMaisPneuSPLIT() throws InterruptedException {
+//        homePage.barraDePesquisa(DadosParaTeste.jogo);
+//        homePage.apertarEnter();
+//        vitrinePage.clicarNoProduto();
+//        itemPage.clickBtnComprar();
+//        carrinhoPage.continuarComprando();
+//        homePage.barraDePesquisa(DadosParaTeste.pneu);
+//        homePage.apertarEnter();
+//        vitrinePage.clicarNoProduto();
+//        itemPage.clickBtnComprar();
+//        carrinhoPage.escreverCep(DadosParaTeste.cep);
+//        carrinhoPage.clickCalcularCEP();
+//        carrinhoPage.clickFinalizarCompraComEsperaOficial();
+//        loginPage.guest();
+//        enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+//        enderecoPage.btnProximoEndereco();
+//        Thread.sleep(1000);
+//        entregaPage.entregaNormalCX();
+//        Thread.sleep(5000);
+//        entregaPage.proximoEntregaWait();
+//        Thread.sleep(5000);
+//        pagamentoPage.pagNupay();
+//        pagamentoPage.FinalizaSuaComprabkp();
+//        System.out.println(pagamentoPage.ObterNumeroPedido());
+//    }
+     @Test
+    @DisplayName("Compra Rápida, com um Pneu + Jogo, entrega MM, com CUPOM (TONIMEKPASSEIO), pagamento no Cartão de Crédito")
+    public void GuestBoletoJogoMaisPneuCUPOM() throws InterruptedException{
+         homePage.barraDePesquisa(DadosParaTeste.jogo);
+         homePage.apertarEnter();
+         vitrinePage.clicarNoProduto();
+         itemPage.clickBtnComprar();
+         carrinhoPage.continuarComprando();
+         homePage.barraDePesquisa(DadosParaTeste.pneu);
+         homePage.apertarEnter();
+         vitrinePage.clicarNoProduto();
+         itemPage.clickBtnComprar();
+         carrinhoPage.escreverCep(DadosParaTeste.cep);
+         carrinhoPage.clickCalcularCEP();
+         carrinhoPage.fluxoCupom(DadosParaTeste.cupom);
+         carrinhoPage.clickFinalizarCompraComEsperaOficial();
+         loginPage.guest();
+         enderecoPage.escreverDadosDoEndereco(DadosParaTeste.cep);
+         enderecoPage.btnProximoEndereco();
+         Thread.sleep(6000);
+         entregaPage.entregaNormalCX();
+         Thread.sleep(5000);
+         entregaPage.proximoEntregaWait();
+         Thread.sleep(5000);
+         pagamentoPage.boleto();
+         pagamentoPage.FinalizaSuaComprabkp();
+         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
 }

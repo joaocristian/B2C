@@ -126,11 +126,11 @@ public class CarrinhoPage extends BasePage {
     }
 
     public void fluxoCupom(String cupom) throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         inserirCupom(cupom);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         aplicarCupom();
-        Thread.sleep(1000);
+        Thread.sleep(10000);
         conferirCupomAplicado();
     }
 

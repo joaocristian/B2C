@@ -29,7 +29,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormal();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -48,8 +48,8 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormal();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -69,7 +69,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -88,7 +88,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormal();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido1());
@@ -110,8 +110,8 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -128,7 +128,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormal();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -149,7 +149,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormal();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -170,7 +170,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormal();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -198,8 +198,8 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -225,7 +225,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormal();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -251,7 +251,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.fluxoPagCartaoCredito();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -278,7 +278,7 @@ public class K_CompraPFEntregaNormal extends BaseTest {
         enderecoPage.escreverDadosDoEndereco04547004();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.pagNupay();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());

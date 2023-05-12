@@ -39,7 +39,7 @@ public class O_FluxoCompraServico extends BaseTest {
         loginPage.guest();
         enderecoPage.escreverCasa();
         enderecoPage.escreverNumeroDaCasa();
-        enderecoPage.btnProximoEnderecoOficial();
+        enderecoPage.proximoEndereco();
         entregaPage.ProximoEntregaComEsperaOficial();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaCompraOficial();

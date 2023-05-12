@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.List;
 
 import static Core.DriverFactory.getDriver;
 import static org.openqa.selenium.By.*;
@@ -131,7 +132,17 @@ public class BasePage {
     }
     
     public String obterTextoComPathEspera(String path) {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(path)));
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(path)));
+            return getDriver().findElement(By.xpath(path)).getText();
+        }
+        catch (Exception ex){
+            return getDriver().findElement(By.xpath(path)).getText();
+        }
+    }
+
+    public String obterTextoComPathEspera1(String path) throws InterruptedException {
+        Thread.sleep(2000);
         return getDriver().findElement(By.xpath(path)).getText();
     }
 
@@ -218,9 +229,21 @@ public class BasePage {
         getDriver().findElement(linkText(link)).click();
     }
 
+    public void clicarLinkLista(String link, String adress) {
+        List<WebElement> links = getDriver().findElements(By.linkText(link));
+        WebElement elemento = links.stream().filter(l-> l.getAttribute("href").equals(adress)).findFirst().get();
+        elemento.click();
+    }
+
     public void clicarLinkComEspera(String link) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(linkText(link)));
-        getDriver().findElement(linkText(link)).click();
+        try{
+            wait.until(ExpectedConditions.visibilityOfElementLocated(linkText(link)));
+            getDriver().findElement(linkText(link)).click();
+        }
+        catch (Exception ex){
+            getDriver().findElement(linkText(link)).click();
+        }
+
     }
 
     public void clicarLinkXpath(String xpath){
@@ -232,8 +255,6 @@ public class BasePage {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
             getDriver().findElement(xpath(xpath)).click();
         }
-
-
     }
 
     public void clicarLinkXpath1(String xpath){
@@ -278,7 +299,6 @@ public class BasePage {
 
     public void clicarComEspera(String classe, String id_campo, String xpath){
         try{
-            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
             wait.until(ExpectedConditions.visibilityOf(getDriver().findElement(className(classe))));
             wait.until(ExpectedConditions.invisibilityOf(getDriver().findElement(className(classe))));
         }
@@ -289,17 +309,14 @@ public class BasePage {
 
     public void clicarComEsperaID(String id_campo){
         try{
-            wait.until(ExpectedConditions.invisibilityOf(getDriver().findElement(className("loading"))));
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(className("loading")));
             wait.until(ExpectedConditions.elementToBeClickable(By.id(id_campo)));
             getDriver().findElement(id(id_campo)).click();
         }
         catch (Exception ex){
-            ex.printStackTrace();
             getDriver().findElement(id(id_campo)).click();
         }
-
-
-    }
+}
 
     public void clicarComEsperaIDbkp(String id_campo){
         wait.until(ExpectedConditions.invisibilityOf(getDriver().findElement(className("loading"))));
@@ -315,9 +332,15 @@ public class BasePage {
     }
 
     public void clicarComEsperaPath(String path){
-        wait.until(ExpectedConditions.invisibilityOf(getDriver().findElement(className("loading"))));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(path)));
-        getDriver().findElement(xpath(path)).click();
+        try{
+            wait.until(ExpectedConditions.invisibilityOf(getDriver().findElement(className("loading"))));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(path)));
+            getDriver().findElement(xpath(path)).click();
+        }
+        catch (Exception ex){
+            getDriver().findElement(xpath(path)).click();
+        }
+
     }
 
     public void clicarComEsperaPath1(String path){

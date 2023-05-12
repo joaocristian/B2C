@@ -60,7 +60,7 @@ public class Z_FluxoCompraTestPJ extends BaseTest {
         enderecoPage.selecionaroEndereco04547006CX1();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -80,7 +80,7 @@ public class Z_FluxoCompraTestPJ extends BaseTest {
         enderecoPage.selecionaroEndereco04547006CX1();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
+        entregaPage.proximoEntregaWait();
         pagamentoPage.PagBoletoComEspera();
         pagamentoPage.FinalizaSuaCompraOficial();
         System.out.println(pagamentoPage.ObterNumeroPedido());
@@ -100,8 +100,8 @@ public class Z_FluxoCompraTestPJ extends BaseTest {
         enderecoPage.selecionaroEndereco04547006CX1();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaCompraOficial();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -120,8 +120,8 @@ public class Z_FluxoCompraTestPJ extends BaseTest {
         enderecoPage.selecionaroEndereco04547006CX1();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagBoleto();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.boleto();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
@@ -140,8 +140,8 @@ public class Z_FluxoCompraTestPJ extends BaseTest {
         enderecoPage.selecionaroEndereco04547006CX1();
         enderecoPage.btnProximoEndereco();
         entregaPage.entregaNormalCX();
-        entregaPage.btnProximoEntrega();
-        pagamentoPage.PagPix();
+        entregaPage.proximoEntregaWait();
+        pagamentoPage.pix();
         pagamentoPage.FinalizaSuaComprabkp();
         System.out.println(pagamentoPage.ObterNumeroPedido());
     }
